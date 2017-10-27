@@ -1,16 +1,21 @@
 package com.android.ticket.test.login;
 
 import com.android.test.info.Purchase;
+import com.android.test.info.Sold;
 import com.android.test.info.handle.LoadUtil;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class SummitOrderActivity extends Activity {
 	private String[] key;
@@ -22,6 +27,7 @@ public class SummitOrderActivity extends Activity {
     TextView totalpriceTextView = null;
 	TextView hallTextView = null;
 	TextView seatTextView = null;
+	private final static String TAG = SummitOrderActivity.class.getSimpleName();
 
 	Button btn = null;
 	private String totalPrice,fileName,hall,seat,userName,date,time,price,number;
@@ -66,9 +72,29 @@ public class SummitOrderActivity extends Activity {
 		usernameTextView.setText(userName);
 		quantityTextView.setText(number);
 
-	    btn.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {	
-			    Purchase film = LoadUtil.addTicket(key[0],key[1],"1","7","五排五座","66","14:00");
+		Log.e(TAG, "getSoldSeat: " + seat );
+		String soldSeatString = seat.substring(1,seat.length()-1);
+		soldSeatString = soldSeatString.replace("排","-");
+		soldSeatString = soldSeatString.replace("座","");
+//		soldSeatString = soldSeatString.split(",");
+		Log.e(TAG, "goSummit: " + soldSeatString );
+		String[] arr = soldSeatString.split(", ");
+		List<String> list = Arrays.asList(arr);
+
+		final StringBuilder sb  = new StringBuilder();
+		sb.append(getSoldSeat());
+		for (String s : list) {
+			Log.e(TAG, "s:" + s );
+			sb.append(",{"+ s+"}");
+			Log.e(TAG, "sb:" + sb );
+		}
+		sb.append("]");
+		Log.e(TAG, "最终: " + sb );
+
+		btn.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Sold sold = LoadUtil.addSold(fileName,date,hall,time,sb.toString());
+			    Purchase film = LoadUtil.addTicket(userName,fileName,number,hall,seat,totalPrice,time);  //分别是用户名、片名、购买数量、影厅、座位、总价、时间
 				if(film!=null)
 				{
 					Toast.makeText(SummitOrderActivity.this,"成功提交订单", Toast.LENGTH_SHORT).show();
@@ -76,7 +102,7 @@ public class SummitOrderActivity extends Activity {
 					Bundle bundle = new Bundle();
 					bundle.putStringArray("username", new String[]{"1"});
 					it.setClass(SummitOrderActivity.this,MainmenuActivity.class);
-					it.putExtra("username", key[0]);
+					it.putExtra("username", userName);   //这里传参一定要是username
 					startActivity(it);
 				}
 				else
@@ -89,5 +115,19 @@ public class SummitOrderActivity extends Activity {
 				}
 			}
 		});
+	}
+
+	private String getSoldSeat(){
+		String Query_seat = LoadUtil.getSoldSeat(fileName,date,hall,time);
+
+		String demo = Query_seat.substring(0,Query_seat.length()-1);
+		Log.e(TAG, "Query_seat: " + demo );
+
+//		String[] arr = demo.split(",");
+//		List<String> list = Arrays.asList(arr);
+//		for (String s : list) {
+//			Log.e(TAG, "s: " + s );
+//		}
+		return demo;
 	}
 }

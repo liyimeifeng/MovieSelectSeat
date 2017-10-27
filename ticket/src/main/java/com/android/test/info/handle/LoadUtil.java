@@ -7,6 +7,7 @@ import java.util.Vector;
 import com.android.test.info.MovieInfo;
 import com.android.test.info.Purchase;
 import com.android.test.info.Release;
+import com.android.test.info.Sold;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -65,6 +66,7 @@ public class LoadUtil {
             sld.close();
             return true;
         } catch (Exception e) {
+            Log.e(TAG, "update: e " + e.getMessage() );
             return false;
         }
 
@@ -176,7 +178,7 @@ public class LoadUtil {
     }
 
     /**
-     * 从排片信息中查询电影名、日期
+     * 从排片信息中查询，根据电影名、日期
      * @param filmname
      * @param date
      * @return
@@ -186,6 +188,54 @@ public class LoadUtil {
         Vector<Vector<String>> temp = query(sql);
         Log.e(TAG, "getSameVector2: " + temp );
         return temp;
+    }
+
+    public static String getSoldSeat(String filmname, String date,String hall,String time){
+        String sql = "select SeatNumber from sold where FilmName='" + filmname + "'and hall='" + hall + "'and date='" + date + "'and time='" + time + "'";
+        String temp = querySeat(sql);
+        Log.e(TAG, "getSoldSeat: " + temp );
+        return temp;
+    }
+
+    public static String querySeat(String sql)//查询
+    {
+        SQLiteDatabase sld = createOrOpenDatabase();//得到连接数据库的连接
+        try {
+            Cursor cur = sld.rawQuery(sql, new String[]{});//得到结果集
+            while (cur.moveToNext())//如果存在下一条
+            {
+                int col = cur.getColumnCount();
+                Log.e(TAG, "query: col---->" + col );
+                //将其放入向量
+                for (int i = 0; i < col; i++) {
+                    Log.e(TAG, "query: cur.getString(i)----->" + cur.getString(i) );
+                    return cur.getString(i);
+                }
+
+            }
+            cur.close();//关闭结果集
+            sld.close();//关闭连接
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    /**
+     * 向数据库中添加已售座位
+     * @param filmname
+     * @param date
+     * @param hall
+     * @param time
+     * @param seat
+     * @return
+     */
+    public static Sold addSold(String filmname, String date,String hall,String time ,String seat){
+        Sold sold = new Sold();
+        String sql1 = "update sold set SeatNumber='" + seat+ "' where FilmName='" + filmname + "' and Hall='" + hall+ "' and Date='" + date + "' and Time='" + time + "'" ;
+        update(sql1);
+        return sold;
     }
 
     //添加购买信息
@@ -202,7 +252,7 @@ public class LoadUtil {
 
     //订单查询（用户名）
     public static Vector<Vector<String>> viewOrder(String username) {
-        String sql = "select Purchaseid,Userid,purchase.FilmName,LoginActivity,Time,purchase.Number from release,purchase where release.FilmName=purchase.FilmName and Userid='" + username + "'";
+        String sql = "select Purchaseid,purchase.FilmName,LoginActivity,purchase.Hall,SeatNumber,purchase.Time,purchase.Number from release,purchase where release.FilmName=purchase.FilmName and Userid='" + username + "'";
         Vector<Vector<String>> temp = query(sql);
         return temp;
     }

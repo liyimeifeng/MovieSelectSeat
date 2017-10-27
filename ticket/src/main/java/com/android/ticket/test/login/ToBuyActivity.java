@@ -26,8 +26,7 @@ import android.widget.Toast;
 public class ToBuyActivity extends Activity {
     private final static String TAG = ToBuyActivity.class.getSimpleName();
     String username = null;    //声明表示访问者，即使用搜索功能的用户ID
-    Button btnGo1 = null;
-    Button btnGo2 = null;
+    Button leishenButton = null,yinyiButton = null,zhengyiButton = null;
     Calendar c;
     Button setStartDataButton = null;
     TextView filmnameLabel = null;
@@ -35,20 +34,23 @@ public class ToBuyActivity extends Activity {
     Button searcherButton = null;
     EditText filmnameLabelText = null;
     BaseAdapter ba = null;
-    String[][] msgg = new String[][]{{""}};//声明引用
+    String[][] msgg = new String[][]{{""}};//声明引zhengyiButton用
     TextView startDataLabel = null;
+    String date= "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buy);
-//		btnGo1 = (Button)findViewById(R.id.ticketSearch_button);//查询
 //		setStartDataButton = (Button) this.findViewById(R.id.startData_button); //日期设置
 //		setfilmnameLabelButton = (Button) this.findViewById(R.id.filmname_button); //电影名设置
 
-        btnGo2 = (Button) findViewById(R.id.ticketBuy_button);//购票
+
+        leishenButton = (Button)findViewById(R.id.leishen);
+        yinyiButton = (Button) findViewById(R.id.yinyishashou);//购票
+        zhengyiButton = (Button) findViewById(R.id.zhengyilianmeng);
         startDataLabel = (TextView) this.findViewById(R.id.startData_label);//日期
-        filmnameLabel = (TextView) this.findViewById(R.id.filmname_label);
+//        filmnameLabel = (TextView) this.findViewById(R.id.filmname_label);
 
         Intent i = getIntent();
         username = i.getStringExtra("username");//visitor==username
@@ -58,7 +60,9 @@ public class ToBuyActivity extends Activity {
 
     public void goBuy() {//日期，电影名查询
         c = Calendar.getInstance();
-        startDataLabel.setText((c.get(Calendar.MONDAY) + 1) + "月" + c.get(Calendar.DAY_OF_MONTH) + "日");
+//        date = (c.get(Calendar.MONDAY) + 1) + "月" + c.get(Calendar.DAY_OF_MONTH) + "日";
+        date = "10月27日";
+        startDataLabel.setText(date);
 
 
         /**
@@ -97,22 +101,19 @@ public class ToBuyActivity extends Activity {
 //		}
 //        });
 
-        btnGo2.setOnClickListener(new View.OnClickListener() {
+        leishenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (validate()) {
+                if (validate(leishenButton)) {
                     {
-                        String filename = filmnameLabel.getText().toString().trim();
-                        String date = startDataLabel.getText().toString().trim();
-                        filename = "港囧";
-                        date = "10月28日";
+                        String filename = leishenButton.getText().toString();
                         //displayText(date);
                         Vector<Vector<String>> Query_filmname;
                         Query_filmname = LoadUtil.getSameVector2(filename, date);
-//                        if (Query_filmname.size() == 0) {
-//                            Toast.makeText(ToBuyActivity.this, "对不起，没有相关的信息!!!", Toast.LENGTH_SHORT).show();
-//                            //etKeyword1.setText("");etKeyword2.setText("");
-//                            return;
-//                        } else {
+                        if (Query_filmname.size() == 0) {
+                            Toast.makeText(ToBuyActivity.this, "对不起，没有相关的信息!!!", Toast.LENGTH_SHORT).show();
+                            //etKeyword1.setText("");etKeyword2.setText("");
+                            return;
+                        } else {
                         Log.e(TAG, "onClick: Query_filmname\n" + Query_filmname + "\nQuery_filmname.elementAt(0) : \n" + Query_filmname.elementAt(0)
                                 + "\nQuery_filmname.elementAt(0).size() : \n" + Query_filmname.elementAt(0).size() + "\nQuery_filmname.size()\n :" + Query_filmname.size());
                             String[][] msgInfo = new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
@@ -124,15 +125,75 @@ public class ToBuyActivity extends Activity {
                             }
                         Log.e(TAG, "msgInfo----> " + msgInfo.toString());
                             goToListView1(msgInfo);//切换到查询结果显示界面ListView界面
-//                        }
+                        }
+                    }
+                }
+            }
+        });
+
+        yinyiButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (validate(yinyiButton)) {
+                    {
+                        String filename = yinyiButton.getText().toString();
+                        //displayText(date);
+                        Vector<Vector<String>> Query_filmname;
+                        Query_filmname = LoadUtil.getSameVector2(filename, date);
+                        if (Query_filmname.size() == 0) {
+                            Toast.makeText(ToBuyActivity.this, "对不起，没有相关的信息!!!", Toast.LENGTH_SHORT).show();
+                            //etKeyword1.setText("");etKeyword2.setText("");
+                            return;
+                        } else {
+                            Log.e(TAG, "onClick: Query_filmname\n" + Query_filmname + "\nQuery_filmname.elementAt(0) : \n" + Query_filmname.elementAt(0)
+                                    + "\nQuery_filmname.elementAt(0).size() : \n" + Query_filmname.elementAt(0).size() + "\nQuery_filmname.size()\n :" + Query_filmname.size());
+                            String[][] msgInfo = new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
+                            for (int i = 0; i < Query_filmname.size(); i++) {//for循环将结果向量中的数据导入数组
+                                for (int j = 0; j < Query_filmname.elementAt(0).size(); j++) {
+                                    msgInfo[j][i] = (String) Query_filmname.get(i).get(j);
+                                    Log.e(TAG, "onClick: msgInfo["+ j + "][" +i + "]---->" +msgInfo[j][i] );
+                                }
+                            }
+                            Log.e(TAG, "msgInfo----> " + msgInfo.toString());
+                            goToListView1(msgInfo);//切换到查询结果显示界面ListView界面
+                        }
+                    }
+                }
+            }
+        });
+
+        zhengyiButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (validate(zhengyiButton)) {
+                    {
+                        String filename = zhengyiButton.getText().toString();
+                        //displayText(date);
+                        Vector<Vector<String>> Query_filmname;
+                        Query_filmname = LoadUtil.getSameVector2(filename, date);
+                        if (Query_filmname.size() == 0) {
+                            Toast.makeText(ToBuyActivity.this, "对不起，没有相关的信息!!!", Toast.LENGTH_SHORT).show();
+                            //etKeyword1.setText("");etKeyword2.setText("");
+                            return;
+                        } else {
+                            Log.e(TAG, "onClick: Query_filmname\n" + Query_filmname + "\nQuery_filmname.elementAt(0) : \n" + Query_filmname.elementAt(0)
+                                    + "\nQuery_filmname.elementAt(0).size() : \n" + Query_filmname.elementAt(0).size() + "\nQuery_filmname.size()\n :" + Query_filmname.size());
+                            String[][] msgInfo = new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
+                            for (int i = 0; i < Query_filmname.size(); i++) {//for循环将结果向量中的数据导入数组
+                                for (int j = 0; j < Query_filmname.elementAt(0).size(); j++) {
+                                    msgInfo[j][i] = (String) Query_filmname.get(i).get(j);
+                                    Log.e(TAG, "onClick: msgInfo["+ j + "][" +i + "]---->" +msgInfo[j][i] );
+                                }
+                            }
+                            Log.e(TAG, "msgInfo----> " + msgInfo.toString());
+                            goToListView1(msgInfo);//切换到查询结果显示界面ListView界面
+                        }
                     }
                 }
             }
         });
     }
 
-    public boolean validate() {
-        String filmname = filmnameLabel.getText().toString().trim();
+    public boolean validate(Button button) {
+        String filmname = button.getText().toString().trim();
         if (filmname.equals("")) {
             Toast.makeText(ToBuyActivity.this, "请输入电影名", Toast.LENGTH_SHORT).show();
             return false;
@@ -180,12 +241,6 @@ public class ToBuyActivity extends Activity {
                 b.setText("预定");
                 b.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {//跳转到交订单界面
-//                        Intent it = new Intent();
-//                        Bundle bundle = new Bundle();
-//                        bundle.putStringArray("key", new String[]{username, msg[0][arg0], msg[2][arg0], msg[3][arg0]});
-//                        it.setClass(ToBuyActivity.this, SummitOrderActivity.class);
-//                        it.putExtras(bundle);
-//                        startActivity(it);
                         Intent intent = new Intent();
                         Bundle bundle = new Bundle();
                         bundle.putStringArray("key",new String[]{msg[0][arg0],msg[1][arg0], msg[2][arg0], msg[3][arg0],msg[4][arg0],username});  //分别传送片名、影厅、日期、时间、票价、用户名

@@ -10,10 +10,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.SeatTable;
+import com.android.test.info.handle.LoadUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Vector;
 
 public class SelectSeatActivity extends Activity {
     public SeatTable seatTableView;
@@ -31,18 +35,44 @@ public class SelectSeatActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_select_seat);
+
         key = this.getIntent().getExtras().getStringArray("key");  //分别接受片名、影厅、日期、时间、票价、用户名
 
         seatTableView = (SeatTable) findViewById(R.id.seatView);
         confirmButton = (Button) findViewById(R.id.confirmButton);
         priceTextview = (TextView) findViewById(R.id.price);
         this.key = this.getIntent().getExtras().getStringArray("key");
+        seatTableView.setData(10, 15);  //10排15座
+
+
         fileName = key[0];
         hall = key[1];
         date = key[2];
         time = key[3];
         price = key[4];
         userName = key[5];
+        String Query_seat = LoadUtil.getSoldSeat(fileName,date,hall,time);
+
+        String demo = Query_seat.substring(1,Query_seat.length()-1);
+        Log.e(TAG, "Query_seat: " + demo );
+        int rowSold = 0;
+        int columnSold = 0;
+        String[] arr = demo.split(",");
+        List<String> list = Arrays.asList(arr);
+        final List<Integer> rowList = new ArrayList<>();
+        final List<Integer> columnList = new ArrayList<>();
+        for (String s : list) {
+            Log.e(TAG, "s: " + s );
+            String[] temp = s.split("-");
+            rowSold = Integer.valueOf(temp[0].substring(1,temp[0].length()));
+            columnSold = Integer.valueOf(temp[1].substring(0,temp[1].length()-1));
+            rowList.add(rowSold);
+            columnList.add(columnSold);
+            Log.e(TAG, "onCreate: 行" + rowSold + "列" + columnSold );
+        }
+
+//        Arrays.asList(Query_seat);
+//        Log.e(TAG, " Arrays.asList(Query_seat): " +  Arrays.asList(Query_seat) );
 
         seatTableView.setScreenName(hall + "号厅荧幕");//设置屏幕名称
         seatTableView.setMaxSelected(8);//设置最多选中
@@ -59,15 +89,21 @@ public class SelectSeatActivity extends Activity {
 
             @Override
             public boolean isSold(int row, int column) {
-                if (row == 6 && column == 6) {
+                if (row == 1 && column == 6) {
                     return true;
                 }
+                for (int i = 0; i < rowList.size(); i++) {
+                    if (row == rowList.get(i)-1 && column == columnList.get(i)){
+                        return true;
+                    }
+                }
+
                 return false;
             }
 
             @Override
             public void checked(int row, int column) {
-
+                Log.e(TAG, "checked: " + row + "/" + column );
             }
 
             @Override
@@ -93,7 +129,6 @@ public class SelectSeatActivity extends Activity {
             }
 
         });
-        seatTableView.setData(10, 15);
         confirmBuy();
     }
 
@@ -103,7 +138,10 @@ public class SelectSeatActivity extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent();
                 Bundle bundle = new Bundle();
-//                key[4] = totalPrice;   //单价替换成总价
+                String temp = seatList.toString().substring(1,seatList.toString().length()-1);
+                String[] arr = temp.split(", ");
+                List<String> list = Arrays.asList(arr);
+
                 bundle.putStringArray("key", new String[]{fileName,hall,seatList.toString() ,date,time,Integer.toString(number),totalPrice,userName});   //分别发送片名、影厅、座位、日期、时间、票数、总票价、用户名
                 it.setClass(SelectSeatActivity.this, SummitOrderActivity.class);
                 it.putExtras(bundle);

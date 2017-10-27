@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\ASProject\\MovieSystem\\ticket\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "D:\\ASProject\\movie\\MovieSystem\\ticket\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -4303,7 +4303,7 @@
                     "endOffset": 38184
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -4322,7 +4322,7 @@
                     "endOffset": 38223
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -4341,7 +4341,7 @@
                     "endOffset": 38262
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -4360,7 +4360,7 @@
                     "endOffset": 38306
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -4379,7 +4379,7 @@
                     "endOffset": 38343
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -4398,7 +4398,7 @@
                     "endOffset": 38385
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -4417,7 +4417,7 @@
                     "endOffset": 38423
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -4436,7 +4436,7 @@
                     "endOffset": 38475
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -4455,7 +4455,7 @@
                     "endOffset": 38517
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -4474,7 +4474,7 @@
                     "endOffset": 38558
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -4493,7 +4493,7 @@
                     "endOffset": 38607
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -4512,7 +4512,7 @@
                     "endOffset": 38656
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -4531,7 +4531,7 @@
                     "endOffset": 38707
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -4550,7 +4550,7 @@
                     "endOffset": 38756
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -4569,7 +4569,7 @@
                     "endOffset": 38805
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -4588,7 +4588,7 @@
                     "endOffset": 38854
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -4607,7 +4607,7 @@
                     "endOffset": 38899
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -4626,7 +4626,7 @@
                     "endOffset": 38946
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -4664,7 +4664,7 @@
                     "endOffset": 39070
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -4683,7 +4683,7 @@
                     "endOffset": 39121
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -10795,7 +10795,7 @@
                     "endOffset": 126589
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 1,
@@ -10816,7 +10816,7 @@
                     "endOffset": 126763
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 1,
@@ -10837,7 +10837,7 @@
                     "endOffset": 126934
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 1,
@@ -10858,7 +10858,7 @@
                     "endOffset": 127106
                 },
                 "from": {
-                    "file": "D:\\ASProject\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
+                    "file": "D:\\ASProject\\movie\\MovieSystem\\ticket\\src\\main\\res\\values\\style.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 1,

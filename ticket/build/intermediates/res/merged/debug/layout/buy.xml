@@ -62,37 +62,39 @@
 
                 <TextView android:text="电影名：" />
 
-                <TextView
-                    android:id="@+id/filmname_label"
-                    android:text="无" />
+                <!--<TextView-->
+                    <!--android:id="@+id/filmname_label"-->
+                    <!--android:text="无" />-->
                 <!--<Button-->
                     <!--android:id="@+id/filmname_button"-->
                     <!--android:text="设置" />-->
             </TableRow>
         </TableLayout>
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dip"
-            android:stretchColumns="3">
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text=" " />
 
                 <!--<Button-->
                     <!--android:id="@+id/ticketSearch_button"-->
                     <!--android:layout_width="100dp"-->
                     <!--android:text="查询" />-->
 
-                <Button
-                    android:id="@+id/ticketBuy_button"
-                    android:layout_width="100dp"
-                    android:text="购票" />
-            </TableRow>
-        </TableLayout>
+
+                    <Button
+                        android:id="@+id/leishen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="雷神" />
+                    <Button
+                        android:id="@+id/yinyishashou"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="银翼杀手" />
+                    <Button
+                        android:id="@+id/zhengyilianmeng"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正义联盟" />
+
+
+
     </LinearLayout>
 </LinearLayout>

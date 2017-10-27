@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\ASProject\\MovieSystem\\ticket\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "merged": "D:\\ASProject\\movie\\MovieSystem\\ticket\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\lusl\\.android\\build-cache\\ce8f64aad3522f5cfdf5596445813ba24dea39a5\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\ASProject\\movie\\MovieSystem\\ticket\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
         "source": "C:\\Users\\lusl\\.android\\build-cache\\ce8f64aad3522f5cfdf5596445813ba24dea39a5\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "D:\\ASProject\\MovieSystem\\ticket\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "merged": "D:\\ASProject\\movie\\MovieSystem\\ticket\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
         "source": "C:\\Users\\lusl\\.android\\build-cache\\ce8f64aad3522f5cfdf5596445813ba24dea39a5\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
-    },
-    {
-        "merged": "D:\\ASProject\\MovieSystem\\ticket\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\lusl\\.android\\build-cache\\ce8f64aad3522f5cfdf5596445813ba24dea39a5\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     }
 ]
