@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/regit"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="#BBEEFF"
+    android:gravity="center_horizontal">
+<LinearLayout android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent" 
+    android:orientation="horizontal">
+<ImageView 
+    android:id="@+id/ImageView01"
+    android:layout_marginTop="15dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" 
+    android:src="@drawable/logo"/>
+<TextView
+    android:text="注册"
+    android:layout_marginLeft="60dp"
+    android:textSize="30dp"
+    android:layout_marginTop="60dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" >
+</TextView>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="100px"
+                android:layout_height="40dp"
+                android:text="登录名:"
+                android:id="@+id/textview1">
+            </TextView>
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="请输入用户名"
+                android:textSize="11sp" >
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp">
+            >
+            <TextView
+                android:layout_width="100px"
+                android:layout_height="40dp"
+                android:id="@+id/textview2"
+                android:text="密码:" >
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="11sp"
+                android:hint="建议设置6位以上的密码"
+                android:id="@+id/editText2"
+                android:password="true">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            >
+            <TextView
+                android:layout_width="100px"
+                android:layout_height="40dp"
+                android:id="@+id/textview3"
+                android:text="确认密码:" >
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="11sp"
+                android:hint="请再次输入密码"
+                android:id="@+id/editText3"
+                android:password="true">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="100px"
+                android:layout_height="40dp"
+                android:id="@+id/textview4"
+                android:text="手机号码:" >
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="11sp"
+                android:hint="请输入你的手机号码"
+                android:minLines="11"
+                android:maxLength="11"
+                android:id="@+id/editText4"
+                android:numeric="integer">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="100px"
+                android:layout_height="40dp"
+                android:id="@+id/textview5"
+                android:text="邮箱:" >
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="11sp"
+                android:hint="请输入你的邮箱"
+                android:id="@+id/editText5">
+            </EditText>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+<LinearLayout
+     android:orientation="horizontal"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:gravity="center_horizontal"
+    >    
+    <Button
+        android:id="@+id/btn_Register"
+        android:layout_width="80dp"
+        android:layout_height="40dp"    
+        android:text="注册">
+    </Button>
+    <Button
+        android:id="@+id/btn_RegisterCancel"
+        android:layout_width="80dp"
+        android:layout_height="40dp"   
+        android:layout_marginLeft="15dp" 
+        android:text="取消">
+    </Button>
+</LinearLayout>
+</LinearLayout>

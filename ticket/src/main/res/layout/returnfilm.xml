@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3E8FA"
+    android:orientation="vertical" >
+<LinearLayout android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent" 
+    android:orientation="horizontal">
+<ImageView 
+    android:id="@+id/ImageView01"
+    android:layout_marginTop="15dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" 
+    android:src="@drawable/logo"/>
+<TextView
+    android:text="详细信息"
+    android:layout_marginLeft="40dp"
+    android:textSize="25dp"
+    android:layout_marginTop="60dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" >
+</TextView>
+</LinearLayout>
+<LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="电影名" 
+        android:id="@+id/returnfilm01"
+        android:textStyle="bold">
+    </TextView>
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="类型" 
+        android:id="@+id/returnfilm02">
+    </TextView>
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="国家" 
+        android:id="@+id/returndfilm03">
+    </TextView>
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="导演" 
+        android:id="@+id/returnfilm04"
+        android:textStyle="bold">
+    </TextView>
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="片长" 
+        android:id="@+id/returnfilm05"
+        android:textStyle="bold">
+    </TextView>
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="简介" 
+        android:id="@+id/returnfilm06"
+        android:textStyle="bold">
+     </TextView>
+</LinearLayout>
+<ListView 
+    android:id="@+id/ListView_returnfilm"       
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:choiceMode="singleChoice"	     
+    android:cacheColorHint="#00000000" >
+</ListView>
+</LinearLayout>

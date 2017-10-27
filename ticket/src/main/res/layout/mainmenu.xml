@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loginRoot"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#BBEEFF"
+    android:orientation="vertical" >
+<LinearLayout android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent" 
+    android:orientation="horizontal">
+<ImageView 
+    android:id="@+id/ImageView01"
+    android:layout_marginTop="15dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" 
+    android:src="@drawable/logo"/>
+<TextView
+    android:text="电影订票系统"
+    android:layout_marginLeft="20dp"
+    android:textSize="25dp"
+    android:layout_marginTop="60dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" >
+</TextView>
+</LinearLayout>
+<LinearLayout
+	    android:id="@+id/LinearLayout01"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1.0"
+	    android:orientation="vertical" >
+	    <TextView
+	        android:id="@+id/text1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	    />
+	    <TextView
+	        android:id="@+id/text2"
+			android:text="欢迎进入电影订票系统"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	    />
+	    <RelativeLayout
+	        android:id="@+id/RelativeLayout02"
+	        android:layout_width="fill_parent"
+	        android:layout_height="242dp"
+	        android:layout_marginLeft="15.0px"
+	        android:layout_marginRight="15.0px"
+	        android:layout_marginTop="5.0px"
+	        android:layout_weight="0.22"
+	        android:paddingTop="2.0px" >
+	        <LinearLayout
+	            android:id="@+id/linearLayout1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignParentTop="true"
+	            android:layout_marginTop="16dp"
+	            android:orientation="vertical" >
+	            <Button
+	                android:id="@+id/button1"
+	                android:layout_width="fill_parent"
+	                android:layout_height="35dp"
+	                android:layout_centerVertical="true"
+	                android:text="购票" />
+	            <Button
+	                android:id="@+id/button2"
+	                android:layout_width="fill_parent"
+	                android:layout_height="35dp"
+	                android:layout_centerVertical="true"
+	                android:text="退票" />
+	            <Button
+	                android:id="@+id/button3"
+	                android:layout_width="fill_parent"
+	                android:layout_height="35dp"
+	                android:layout_centerVertical="true"
+	                android:text="查询" />
+	            <Button
+	                android:id="@+id/button4"
+	                android:layout_width="fill_parent"
+	                android:layout_height="35dp"
+	                android:layout_centerVertical="true"
+	                android:text="查看订单" />
+	            <Button
+	                android:id="@+id/quitapp"
+	                android:layout_width="fill_parent"
+	                android:layout_height="35dp"
+	                android:layout_centerVertical="true"
+	                android:text="退出" />
+	        </LinearLayout>
+	    </RelativeLayout>
+	</LinearLayout>
+</LinearLayout>

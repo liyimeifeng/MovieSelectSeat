@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\a32cfa48ae50f747556c005e0c5021afd72cf85d\output\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_906df28c277444d818368b8aaf4967e099cfa58d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\ee0d90438904d390cd5f48c419ce8fea1aa50be6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\pre-dexed\debug\classes_8ee5cce9cba3d29edaf720275f8cf3384f2c7e5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\4129880f45c7d36ccd4a9fc64c26d74bc1336d76\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\pre-dexed\debug\classes_db782f6f44bfff0c9cd80f39ce6bca738dff5da8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\9547c0e15f7efe581a29af08643b73d8d4cf5c87\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\pre-dexed\debug\classes_3d504d3a55fa68fba127d156ed0de5a86e714956.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8153b1c4aa59383f3c2b1cad3ac6ae1691b50c76\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_c9fae43cda2e1c04b2ab0de43a8f148b5b1a92fa.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dd37e9c1e2c67a1669359990934a5f768dbdd354">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7c5921bc77973e36e303711068abec572cfdc950\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\a32cfa48ae50f747556c005e0c5021afd72cf85d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\pre-dexed\debug\classes_4e100984576b9a1e4f1f7b559d49c3f47e81f629.jar" />
+    </item>
+
+</items>

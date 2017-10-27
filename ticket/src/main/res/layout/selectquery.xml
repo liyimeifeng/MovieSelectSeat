@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#C3E8FA"
+    android:gravity="center_horizontal">
+<LinearLayout android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent" 
+    android:orientation="horizontal">
+<ImageView 
+    android:id="@+id/ImageView01"
+    android:layout_marginTop="15dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" 
+    android:src="@drawable/logo"/>
+<TextView
+    android:text="查询"
+    android:layout_marginLeft="60dp"
+    android:textSize="30dp"
+    android:layout_marginTop="60dp"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content" >
+</TextView>
+</LinearLayout>
+<LinearLayout 
+    android:orientation="horizontal"
+	android:paddingTop="25px"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+<TextView
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:textSize="20dp"
+    android:text="请选择查询方式：" 
+    >
+</TextView>    
+</LinearLayout>
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:gravity="center_horizontal">
+    <Button
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:textSize="15dp"
+        android:id="@+id/btn_selequery1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"    
+        android:text="按电影名查询">   
+    </Button>
+    <Button
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:textSize="15dp"
+        android:id="@+id/btn_selequery2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginLeft="15dp" 
+        android:text="按国家查询">
+     </Button>
+     </LinearLayout>
+</LinearLayout>

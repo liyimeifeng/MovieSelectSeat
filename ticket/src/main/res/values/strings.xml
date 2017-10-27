@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">,welcome!</string>
+    <string name="app_name">电影订票选座系统</string>
+    <string name="login">登录</string>
+    <string name="loginame">登录名:</string>
+    <string name="password">密码:</string>
+    <string name="button1">登录</string>
+    <string name="button2">注册</string>
+    <string name="user_or_pwd_err">用户名或密码错误</string>
+    <string name="pwd_no_same">两次密码不一致！</string>
+    <string name="prompt_info1">账号不能为空！</string>
+    <string name="prompt_info2">密码不能为空！</string>
+    <string name="prompt_info3">确认密码不能为空！</string>
+    <string name="prompt_info4">电话不能为空！</string>
+    <string name="prompt_info5">邮箱不能为空！</string>
+    <string name="modify_logininfo">修改注册信息</string>
+    <string name="modify">修改</string>
+    <string name="usernamenowrite">用户名未填写</string>
+    <string name="pwdnowrite">密码未填写</string>
+    <string name="over">账号长度输入错误</string>
+    <string name="server_err">服务器响应错误</string>
+</resources>
