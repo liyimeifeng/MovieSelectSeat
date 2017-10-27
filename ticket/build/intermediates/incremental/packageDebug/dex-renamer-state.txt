@@ -1,4 +1,4 @@
-#Thu Oct 26 18:13:36 CST 2017
-base.0=D\:\\ASProject\\movie\\MovieSystem\\ticket\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Thu Oct 26 23:10:25 GMT+08:00 2017
+base.0=D\:\\ASProject\\MovieSystem\\ticket\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=D\:\\ASProject\\movie\\MovieSystem\\ticket\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=D\:\\ASProject\\MovieSystem\\ticket\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

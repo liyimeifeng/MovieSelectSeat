@@ -88,7 +88,7 @@ public class SelectSeatActivity extends Activity {
                 number = seatList.size();
                 Log.e(TAG, "购买数量：" + number);
                 totalPrice = Integer.toString(number * Integer.valueOf(price));
-                priceTextview.setText(number * (Integer.valueOf(price)));
+                priceTextview.setText(number * (Integer.valueOf(price)) + "");
                 return null;
             }
 

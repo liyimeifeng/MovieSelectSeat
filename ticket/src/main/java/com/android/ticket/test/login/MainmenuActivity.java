@@ -3,6 +3,7 @@ package com.android.ticket.test.login;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class MainmenuActivity extends Activity {
     Button b4 = null;
     Button bt_quitapp = null;
     String username = null;
+    private final static String TAG = MainmenuActivity.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class MainmenuActivity extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent();
                 it.putExtra("username", username);
+                Log.e(TAG, "username: " + username );
                 it.setClass(MainmenuActivity.this, ViewOrederActivity.class);
                 startActivity(it);            }
         });

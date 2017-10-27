@@ -7,6 +7,7 @@ import com.android.test.info.handle.LoadUtil;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +19,14 @@ import android.widget.TextView;
 public class ViewOrederActivity extends Activity {
 	private String[][] mssg;
     String username = null;
+	private final static String TAG = ViewOrederActivity.class.getSimpleName();
 	public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.vieworder);
 	Intent i = getIntent();
 	username = i.getStringExtra("username");
 	//CreatTable.creattable();
+		Log.e(TAG, "username: " + username );
 	goviewOrder();
 	}
 
@@ -31,6 +34,7 @@ public class ViewOrederActivity extends Activity {
 		ListView lv_detail=(ListView)this.findViewById(R.id.ListView_vieworder);//拿到ListView的引用
         Vector<Vector<String>> Query_vieworder;
 		Query_vieworder = LoadUtil.viewOrder(username);
+		Log.e(TAG, "Query_vieworder: " + Query_vieworder );
 		String[][] msgInfo=new String[Query_vieworder.elementAt(0).size()][Query_vieworder.size()];//新建和结果向量对应的数组
 		 for(int i=0;i<Query_vieworder.size();i++)
 		  {//for循环将结果向量中的数据导入数组

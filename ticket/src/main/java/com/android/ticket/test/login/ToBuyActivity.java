@@ -172,14 +172,14 @@ public class ToBuyActivity extends Activity {
                     s.setText(msg[i][arg0]);//TextView中显示的文字
                     s.setTextSize(14);//字体大小
                     s.setPadding(1, 2, 2, 1);//四周留白
-                    s.setWidth(105);//宽度
+                    s.setWidth(150);//宽度
                     s.setGravity(Gravity.CENTER);
                     ll_detail.addView(s);//放入LinearLayout
                 }
                 Button b = new Button(ToBuyActivity.this);
                 b.setText("预定");
                 b.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {//跳转到提交订单界面
+                    public void onClick(View v) {//跳转到交订单界面
 //                        Intent it = new Intent();
 //                        Bundle bundle = new Bundle();
 //                        bundle.putStringArray("key", new String[]{username, msg[0][arg0], msg[2][arg0], msg[3][arg0]});

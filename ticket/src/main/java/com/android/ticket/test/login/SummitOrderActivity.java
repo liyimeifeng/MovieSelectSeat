@@ -34,7 +34,7 @@ public class SummitOrderActivity extends Activity {
 		filenameTextView = (TextView)findViewById(R.id.filename);
 		hallTextView = (TextView)findViewById(R.id.hall);
 		dateTextView = (TextView)findViewById(R.id.date);
-		timeTextView = (TextView)findViewById(R.id.price);
+		timeTextView = (TextView)findViewById(R.id.time);
 		seatTextView = (TextView)findViewById(R.id.seat);
 		quantityTextView = (TextView)findViewById(R.id.quantity);
 		totalpriceTextView = (TextView)findViewById(R.id.totalprice);
@@ -58,6 +58,10 @@ public class SummitOrderActivity extends Activity {
 		hallTextView.setText(hall);
 		dateTextView.setText(date);
 		timeTextView.setText(time);
+		seat.substring(0,seat.length()-1);
+//		seat.replace("","aaa");
+//		seat.replace("]","aaa");
+		seatTextView.setText(seat.substring(1,seat.length()-1));
 		totalpriceTextView.setText(totalPrice);
 		usernameTextView.setText(userName);
 		quantityTextView.setText(number);
