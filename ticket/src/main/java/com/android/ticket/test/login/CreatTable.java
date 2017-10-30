@@ -1,9 +1,11 @@
 package com.android.ticket.test.login;
+import android.content.Context;
+
 import com.android.test.info.handle.*;
 
 
 public class CreatTable {
-	public static void creattable(){		
+	public static void creattable(){
 		try{
 			String sqll[]=new String[]{
 
@@ -43,7 +45,7 @@ public class CreatTable {
 			};			
 			for(String o:sqll){//循环所有SQL语句，进行建表和初始化一些数据操作
 				LoadUtil.createTable(o);
-			}		
+			}
 		}catch(Exception e){		
 			e.printStackTrace();			
 		}

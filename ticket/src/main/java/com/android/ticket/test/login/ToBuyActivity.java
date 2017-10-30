@@ -78,16 +78,16 @@ public class ToBuyActivity extends Activity {
                             //etKeyword1.setText("");etKeyword2.setText("");
                             return;
                         } else {
-                        Log.e(TAG, "onClick: Query_filmname\n" + Query_filmname + "\nQuery_filmname.elementAt(0) : \n" + Query_filmname.elementAt(0)
-                                + "\nQuery_filmname.elementAt(0).size() : \n" + Query_filmname.elementAt(0).size() + "\nQuery_filmname.size()\n :" + Query_filmname.size());
+//                        Log.e(TAG, "onClick: Query_filmname\n" + Query_filmname + "\nQuery_filmname.elementAt(0) : \n" + Query_filmname.elementAt(0)
+//                                + "\nQuery_filmname.elementAt(0).size() : \n" + Query_filmname.elementAt(0).size() + "\nQuery_filmname.size()\n :" + Query_filmname.size());
                             String[][] msgInfo = new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
                             for (int i = 0; i < Query_filmname.size(); i++) {//for循环将结果向量中的数据导入数组
                                 for (int j = 0; j < Query_filmname.elementAt(0).size(); j++) {
                                     msgInfo[j][i] = (String) Query_filmname.get(i).get(j);
-                                    Log.e(TAG, "onClick: msgInfo["+ j + "][" +i + "]---->" +msgInfo[j][i] );
+//                                    Log.e(TAG, "onClick: msgInfo["+ j + "][" +i + "]---->" +msgInfo[j][i] );
                                 }
                             }
-                        Log.e(TAG, "msgInfo----> " + msgInfo.toString());
+//                        Log.e(TAG, "msgInfo----> " + msgInfo.toString());
                             goToListView1(msgInfo);//切换到查询结果显示界面ListView界面
                         }
                     }

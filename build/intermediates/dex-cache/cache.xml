@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="D:\ASProject\movie\MovieSelectSeat\ticket\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="7465f7f7833c121e29e18d9d0f498c1bfece5d26">
-        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7c5921bc77973e36e303711068abec572cfdc950\classes.dex" />
+        sha1="06b6c20c286161829192ded0ecc490070805aba4">
+        <dex dex="D:\ASProject\movie\MovieSelectSeat\ticket\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_98d6b13ee49ba79c0c0a5ca6bcee05a8f8e80b30\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="D:\ASProject\movie\MovieSelectSeat\ticket\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="D:\ASProject\movie\MovieSystem\ticket\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8153b1c4aa59383f3c2b1cad3ac6ae1691b50c76\classes.dex" />
+        <dex dex="D:\ASProject\movie\MovieSelectSeat\ticket\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4851330b3edd621bfe4ddb0a22071059b180ca60\classes.dex" />
     </item>
 
 </items>

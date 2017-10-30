@@ -44,8 +44,6 @@ public class ViewOrederActivity extends Activity {
 					msgInfo[j][i]=(String)Query_vieworder.get(i).get(j);
 				}
 			}
-			//mssg = msgInfo;
-			// Toast.makeText(ViewOrederActivity.this, msgInfo[6][0], Toast.LENGTH_SHORT).show();
 			final String[][]msg=msgInfo;//新建数组，并赋值
 			BaseAdapter ba_detail=new BaseAdapter()//新建适配器
 			{

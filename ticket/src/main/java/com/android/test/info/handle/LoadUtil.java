@@ -20,6 +20,7 @@ import android.widget.Toast;
 public class LoadUtil {
 
     private final static String TAG = LoadUtil.class.getSimpleName();
+    private Context context;
 
     public static SQLiteDatabase createOrOpenDatabase()//连接数据库
     {
@@ -31,6 +32,7 @@ public class LoadUtil {
                             null,
                             SQLiteDatabase.OPEN_READWRITE | SQLiteDatabase.CREATE_IF_NECESSARY);
         } catch (Exception e) {
+            Log.e(TAG, "createOrOpenDatabase: " + e.getMessage() );
             e.printStackTrace();
         }
         return sld;//返回该连接
@@ -246,7 +248,7 @@ public class LoadUtil {
 
     //订单查询（用户名）
     public static Vector<Vector<String>> viewOrder(String username) {
-        String sql = "select Purchaseid,purchase.FilmName,LoginActivity,purchase.Hall,SeatNumber,purchase.Time,purchase.Number from release,purchase where release.FilmName=purchase.FilmName and Userid='" + username + "'";
+        String sql = "select Purchaseid,purchase.FilmName,LoginActivity,purchase.Hall,SeatNumber,purchase.Time,purchase.Number from release,purchase where release.FilmName=purchase.FilmName and release.Time=purchase.Time and Userid='" + username + "'";
         Vector<Vector<String>> temp = query(sql);
         return temp;
     }
