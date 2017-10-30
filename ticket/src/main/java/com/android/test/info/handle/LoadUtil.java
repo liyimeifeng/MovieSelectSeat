@@ -190,7 +190,7 @@ public class LoadUtil {
     }
 
     public static String getSoldSeat(String filmname, String date,String hall,String time){
-        String sql = "select SeatNumber from sold where FilmName='" + filmname + "'and hall='" + hall + "'and date='" + date + "'and time='" + time + "'";
+        String sql = "select SeatNumber from sold where FilmName='" + filmname + "'and Hall='" + hall + "'and Date='" + date + "'and Time='" + time + "'";
         String temp = querySeat(sql);
         return temp;
     }

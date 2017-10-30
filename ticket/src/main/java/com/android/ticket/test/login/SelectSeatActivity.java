@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,8 +29,9 @@ public class SelectSeatActivity extends Activity {
     private int number = 0;
     private String totalPrice,fileName,hall,userName,date,time,price;
 
-    private List<String> seatList = new ArrayList<>();   //用于存放选中的座位
-
+    private List<String> seatList = new ArrayList<>();   //用于存放选中的座位(几排几列)
+    private List<Integer> rowList = new ArrayList<>();    //用于存放“行”数字
+    private List<Integer> columnList = new ArrayList<>();  //用于存放“列”数字
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,26 +55,24 @@ public class SelectSeatActivity extends Activity {
         userName = key[5];
         String Query_seat = LoadUtil.getSoldSeat(fileName,date,hall,time);
 
-        String demo = Query_seat.substring(1,Query_seat.length()-1);
-        Log.e(TAG, "Query_seat: " + demo );
-        int rowSold = 0;
-        int columnSold = 0;
-        String[] arr = demo.split(",");
-        List<String> list = Arrays.asList(arr);
-        final List<Integer> rowList = new ArrayList<>();
-        final List<Integer> columnList = new ArrayList<>();
-        for (String s : list) {
-            Log.e(TAG, "s: " + s );
-            String[] temp = s.split("-");
-            rowSold = Integer.valueOf(temp[0].substring(1,temp[0].length()));
-            columnSold = Integer.valueOf(temp[1].substring(0,temp[1].length()-1));
-            rowList.add(rowSold);
-            columnList.add(columnSold);
-            Log.e(TAG, "onCreate: 行" + rowSold + "列" + columnSold );
-        }
+        if (!TextUtils.isEmpty(Query_seat)){
+            String demo = Query_seat.substring(1,Query_seat.length()-1);
+            Log.e(TAG, "Query_seat: " + demo );
+            int rowSold = 0;
+            int columnSold = 0;
+            String[] arr = demo.split(",");
+            List<String> list = Arrays.asList(arr);
 
-//        Arrays.asList(Query_seat);
-//        Log.e(TAG, " Arrays.asList(Query_seat): " +  Arrays.asList(Query_seat) );
+            for (String s : list) {
+//            Log.e(TAG, "s: " + s );
+                String[] temp = s.split("-");
+                rowSold = Integer.valueOf(temp[0].substring(1,temp[0].length()));
+                columnSold = Integer.valueOf(temp[1].substring(0,temp[1].length()-1));
+                rowList.add(rowSold);
+                columnList.add(columnSold);
+//            Log.e(TAG, "onCreate: 行" + rowSold + "列" + columnSold );
+            }
+        }
 
         seatTableView.setScreenName(hall + "号厅荧幕");//设置屏幕名称
         seatTableView.setMaxSelected(8);//设置最多选中
@@ -110,7 +110,7 @@ public class SelectSeatActivity extends Activity {
                     seatList.add(seat);
                 }
 
-                Log.e(TAG, "checked: " + row + "/" + column );
+//                Log.e(TAG, "checked: " + row + "/" + column );
             }
 
             @Override
