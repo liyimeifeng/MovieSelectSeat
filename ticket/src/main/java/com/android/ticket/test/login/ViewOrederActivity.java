@@ -33,6 +33,7 @@ public class ViewOrederActivity extends Activity {
 		ListView lv_detail=(ListView)this.findViewById(R.id.ListView_vieworder);//拿到ListView的引用
         Vector<Vector<String>> Query_vieworder;
 		Query_vieworder = LoadUtil.viewOrder(username);
+
 		Log.e(TAG, "Query_vieworder: " + Query_vieworder );
 		if (Query_vieworder.size() > 0){
 			String[][] msgInfo=new String[Query_vieworder.elementAt(0).size()][Query_vieworder.size()];//新建和结果向量对应的数组

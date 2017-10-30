@@ -641,12 +641,10 @@ public class SeatTable extends View {
 
         String txt = (row + 1) + "排";
         String txt1 = (column) + "座";
-        Log.e(TAG, "drawText: " + txt + txt1 );
 
         if(seatChecker!=null){
 //            Log.e(TAG, "drawText: " + (row+1) + "/" + column );
             String[] strings = seatChecker.checkedSeatTxt(row +1, column);
-            Log.e(TAG, "drawText: "  + strings );
             if(strings!=null&&strings.length>0){
                 if(strings.length>=2){
                     txt=strings[0];
@@ -1097,7 +1095,7 @@ public class SeatTable extends View {
                             if (index >= 0) {
                                 remove(index);
                                 if (seatChecker != null) {
-                                    seatChecker.unCheck(i, j);
+                                    seatChecker.unCheck(i + 1, j);
                                 }
                             } else {
                                 if (selects.size() >= maxSelected) {
@@ -1106,7 +1104,7 @@ public class SeatTable extends View {
                                 } else {
                                     addChooseSeat(i, j);
                                     if (seatChecker != null) {
-                                        seatChecker.checked(i, j);
+                                        seatChecker.checked(i + 1, j);
                                     }
                                 }
                             }

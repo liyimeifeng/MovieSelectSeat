@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="debug-db-1.0.0">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/8c5a9729d26872f8ca164392fbfe6232335058fa/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/8c5a9729d26872f8ca164392fbfe6232335058fa/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/317f9996b70a554e9b9730409eebb290a58ee836/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/317f9996b70a554e9b9730409eebb290a58ee836/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amitshekhar.android/debug-db/1.0.0/1cf3dc9d15fcc6f3012c01badb7d5861bb71c559/debug-db-1.0.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

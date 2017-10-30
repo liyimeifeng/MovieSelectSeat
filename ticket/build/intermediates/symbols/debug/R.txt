@@ -544,9 +544,9 @@ int id btn_selequery1 0x7f0b00b0
 int id btn_selequery2 0x7f0b00b1
 int id btn_update 0x7f0b00c2
 int id button1 0x7f0b007f
-int id button2 0x7f0b0080
-int id button3 0x7f0b0081
-int id button4 0x7f0b0082
+int id button2 0x7f0b0083
+int id button3 0x7f0b0080
+int id button4 0x7f0b0081
 int id buttonPanel 0x7f0b0033
 int id cancel_action 0x7f0b0085
 int id cbRemember 0x7f0b0076
@@ -627,7 +627,7 @@ int id progress_horizontal 0x7f0b0006
 int id quantity 0x7f0b00b7
 int id query1 0x7f0b0092
 int id query2 0x7f0b0094
-int id quitapp 0x7f0b0083
+int id quitapp 0x7f0b0082
 int id radio 0x7f0b0043
 int id regit 0x7f0b0095
 int id returndetail01 0x7f0b00a2

@@ -94,10 +94,8 @@ public class LoadUtil {
             {
                 Vector<String> v = new Vector<String>();
                 int col = cur.getColumnCount();
-                Log.e(TAG, "query: col---->" + col );
                 //将其放入向量
                 for (int i = 0; i < col; i++) {
-                    Log.e(TAG, "query: cur.getString(i)----->" + cur.getString(i) );
                     v.add(cur.getString(i));
                 }
                 vector.add(v);
@@ -186,14 +184,12 @@ public class LoadUtil {
     public static Vector<Vector<String>> getSameVector2(String filmname, String date) {
         String sql = "select FilmName,Hall,LoginActivity,Time,Money,Number from release where FilmName='" + filmname + "'and LoginActivity='" + date + "'";
         Vector<Vector<String>> temp = query(sql);
-        Log.e(TAG, "getSameVector2: " + temp );
         return temp;
     }
 
     public static String getSoldSeat(String filmname, String date,String hall,String time){
         String sql = "select SeatNumber from sold where FilmName='" + filmname + "'and hall='" + hall + "'and date='" + date + "'and time='" + time + "'";
         String temp = querySeat(sql);
-        Log.e(TAG, "getSoldSeat: " + temp );
         return temp;
     }
 
@@ -205,10 +201,8 @@ public class LoadUtil {
             while (cur.moveToNext())//如果存在下一条
             {
                 int col = cur.getColumnCount();
-                Log.e(TAG, "query: col---->" + col );
                 //将其放入向量
                 for (int i = 0; i < col; i++) {
-                    Log.e(TAG, "query: cur.getString(i)----->" + cur.getString(i) );
                     return cur.getString(i);
                 }
 

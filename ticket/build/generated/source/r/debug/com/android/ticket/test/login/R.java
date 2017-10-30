@@ -2143,9 +2143,9 @@ containing a value of this type.
         public static final int btn_selequery2=0x7f0b00b1;
         public static final int btn_update=0x7f0b00c2;
         public static final int button1=0x7f0b007f;
-        public static final int button2=0x7f0b0080;
-        public static final int button3=0x7f0b0081;
-        public static final int button4=0x7f0b0082;
+        public static final int button2=0x7f0b0083;
+        public static final int button3=0x7f0b0080;
+        public static final int button4=0x7f0b0081;
         public static final int buttonPanel=0x7f0b0033;
         public static final int cancel_action=0x7f0b0085;
         public static final int cbRemember=0x7f0b0076;
@@ -2226,7 +2226,7 @@ containing a value of this type.
         public static final int quantity=0x7f0b00b7;
         public static final int query1=0x7f0b0092;
         public static final int query2=0x7f0b0094;
-        public static final int quitapp=0x7f0b0083;
+        public static final int quitapp=0x7f0b0082;
         public static final int radio=0x7f0b0043;
         public static final int regit=0x7f0b0095;
         public static final int returndetail01=0x7f0b00a2;

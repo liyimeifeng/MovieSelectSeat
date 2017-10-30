@@ -27,7 +27,7 @@ public class MainmenuActivity extends Activity {
         TextView t1 = (TextView) findViewById(R.id.text1);
         TextView t2 = (TextView) findViewById(R.id.text2);
         b1 = (Button) findViewById(R.id.button1);//购票
-        b2 = (Button) findViewById(R.id.button2);//退票
+//        b2 = (Button) findViewById(R.id.button2);//退票
         b3 = (Button) findViewById(R.id.button3);//查询
         b4 = (Button) findViewById(R.id.button4);//查看订单
         bt_quitapp = (Button) findViewById(R.id.quitapp); //退出
@@ -63,13 +63,13 @@ public class MainmenuActivity extends Activity {
         /**
          *去掉退票、查询
          */
-        b2.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                Intent it = new Intent();
-                it.putExtra("username", username);
-                it.setClass(MainmenuActivity.this, ToReturnActivity.class);
-                startActivity(it);            }
-        });
+//        b2.setOnClickListener(new OnClickListener() {
+//            public void onClick(View v) {
+//                Intent it = new Intent();
+//                it.putExtra("username", username);
+//                it.setClass(MainmenuActivity.this, ToReturnActivity.class);
+//                startActivity(it);            }
+//        });
 
         b3.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -84,7 +84,9 @@ public class MainmenuActivity extends Activity {
         if (bt_quitapp != null)
             bt_quitapp.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
-                    finish();
+                    Intent intent = new Intent();
+                    intent.setClass(MainmenuActivity.this,LoginActivity.class);
+                    startActivity(intent);
                 }
             });
     }

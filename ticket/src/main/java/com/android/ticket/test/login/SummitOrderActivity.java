@@ -84,9 +84,7 @@ public class SummitOrderActivity extends Activity {
 		final StringBuilder sb  = new StringBuilder();
 		sb.append(getSoldSeat());
 		for (String s : list) {
-			Log.e(TAG, "s:" + s );
 			sb.append(",{"+ s+"}");
-			Log.e(TAG, "sb:" + sb );
 		}
 		sb.append("]");
 		Log.e(TAG, "最终: " + sb );
@@ -122,12 +120,6 @@ public class SummitOrderActivity extends Activity {
 
 		String demo = Query_seat.substring(0,Query_seat.length()-1);
 		Log.e(TAG, "Query_seat: " + demo );
-
-//		String[] arr = demo.split(",");
-//		List<String> list = Arrays.asList(arr);
-//		for (String s : list) {
-//			Log.e(TAG, "s: " + s );
-//		}
 		return demo;
 	}
 }

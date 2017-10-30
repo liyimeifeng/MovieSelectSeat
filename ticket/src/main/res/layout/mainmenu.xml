@@ -65,12 +65,12 @@
 	                android:layout_height="35dp"
 	                android:layout_centerVertical="true"
 	                android:text="购票" />
-	            <Button
-	                android:id="@+id/button2"
-	                android:layout_width="fill_parent"
-	                android:layout_height="35dp"
-	                android:layout_centerVertical="true"
-	                android:text="退票" />
+	            <!--<Button-->
+	                <!--android:id="@+id/button2"-->
+	                <!--android:layout_width="fill_parent"-->
+	                <!--android:layout_height="35dp"-->
+	                <!--android:layout_centerVertical="true"-->
+	                <!--android:text="退票" />-->
 	            <Button
 	                android:id="@+id/button3"
 	                android:layout_width="fill_parent"

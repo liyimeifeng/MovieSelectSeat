@@ -65,42 +65,6 @@ public class ToBuyActivity extends Activity {
         startDataLabel.setText(date);
 
 
-        /**
-         * 去掉日期设置、电影设置
-         */
-//		setStartDataButton.setOnClickListener(this);
-//		setfilmnameLabelButton.setOnClickListener(this);
-//        btnGo1.setOnClickListener(new View.OnClickListener() {
-//			public void onClick(View v) {
-//				if(validate())
-//				{
-//				 String filmname = filmnameLabel.getText().toString().trim();
-//				 String date = startDataLabel.getText().toString().trim();
-//				 //displayText(date);
-//				 Vector<Vector<String>> Query_filmname;
-//				 Query_filmname = LoadUtil.getSameVector1(filmname,date);
-//				 if(Query_filmname.size()==0)
-//				{
-//					Toast.makeText(ToBuyActivity.this, "对不起，没有相关的信息!!!", Toast.LENGTH_SHORT).show();
-//						//etKeyword1.setText("");etKeyword2.setText("");
-//					return;
-//				}
-//				else
-//				{
-//				 String[][] msgInfo=new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
-//				 for(int i=0;i<Query_filmname.size();i++)
-//				  {//for循环将结果向量中的数据导入数组
-//					for(int j=0;j<Query_filmname.elementAt(0).size();j++)
-//						{
-//							msgInfo[j][i]=(String)Query_filmname.get(i).get(j);
-//						}
-//					}
-//					goToListView(msgInfo);//切换到查询结果显示界面ListView界面
-//				}
-//			}
-//		}
-//        });
-
         leishenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (validate(leishenButton)) {
@@ -144,16 +108,12 @@ public class ToBuyActivity extends Activity {
                             //etKeyword1.setText("");etKeyword2.setText("");
                             return;
                         } else {
-                            Log.e(TAG, "onClick: Query_filmname\n" + Query_filmname + "\nQuery_filmname.elementAt(0) : \n" + Query_filmname.elementAt(0)
-                                    + "\nQuery_filmname.elementAt(0).size() : \n" + Query_filmname.elementAt(0).size() + "\nQuery_filmname.size()\n :" + Query_filmname.size());
                             String[][] msgInfo = new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
                             for (int i = 0; i < Query_filmname.size(); i++) {//for循环将结果向量中的数据导入数组
                                 for (int j = 0; j < Query_filmname.elementAt(0).size(); j++) {
                                     msgInfo[j][i] = (String) Query_filmname.get(i).get(j);
-                                    Log.e(TAG, "onClick: msgInfo["+ j + "][" +i + "]---->" +msgInfo[j][i] );
                                 }
                             }
-                            Log.e(TAG, "msgInfo----> " + msgInfo.toString());
                             goToListView1(msgInfo);//切换到查询结果显示界面ListView界面
                         }
                     }
@@ -174,22 +134,54 @@ public class ToBuyActivity extends Activity {
                             //etKeyword1.setText("");etKeyword2.setText("");
                             return;
                         } else {
-                            Log.e(TAG, "onClick: Query_filmname\n" + Query_filmname + "\nQuery_filmname.elementAt(0) : \n" + Query_filmname.elementAt(0)
-                                    + "\nQuery_filmname.elementAt(0).size() : \n" + Query_filmname.elementAt(0).size() + "\nQuery_filmname.size()\n :" + Query_filmname.size());
                             String[][] msgInfo = new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
                             for (int i = 0; i < Query_filmname.size(); i++) {//for循环将结果向量中的数据导入数组
                                 for (int j = 0; j < Query_filmname.elementAt(0).size(); j++) {
                                     msgInfo[j][i] = (String) Query_filmname.get(i).get(j);
-                                    Log.e(TAG, "onClick: msgInfo["+ j + "][" +i + "]---->" +msgInfo[j][i] );
                                 }
                             }
-                            Log.e(TAG, "msgInfo----> " + msgInfo.toString());
                             goToListView1(msgInfo);//切换到查询结果显示界面ListView界面
                         }
                     }
                 }
             }
         });
+
+        /**
+         * 去掉日期设置、电影设置
+         */
+//		setStartDataButton.setOnClickListener(this);
+//		setfilmnameLabelButton.setOnClickListener(this);
+//        btnGo1.setOnClickListener(new View.OnClickListener() {
+//			public void onClick(View v) {
+//				if(validate())
+//				{
+//				 String filmname = filmnameLabel.getText().toString().trim();
+//				 String date = startDataLabel.getText().toString().trim();
+//				 //displayText(date);
+//				 Vector<Vector<String>> Query_filmname;
+//				 Query_filmname = LoadUtil.getSameVector1(filmname,date);
+//				 if(Query_filmname.size()==0)
+//				{
+//					Toast.makeText(ToBuyActivity.this, "对不起，没有相关的信息!!!", Toast.LENGTH_SHORT).show();
+//						//etKeyword1.setText("");etKeyword2.setText("");
+//					return;
+//				}
+//				else
+//				{
+//				 String[][] msgInfo=new String[Query_filmname.elementAt(0).size()][Query_filmname.size()];//新建和结果向量对应的数组
+//				 for(int i=0;i<Query_filmname.size();i++)
+//				  {//for循环将结果向量中的数据导入数组
+//					for(int j=0;j<Query_filmname.elementAt(0).size();j++)
+//						{
+//							msgInfo[j][i]=(String)Query_filmname.get(i).get(j);
+//						}
+//					}
+//					goToListView(msgInfo);//切换到查询结果显示界面ListView界面
+//				}
+//			}
+//		}
+//        });
     }
 
     public boolean validate(Button button) {
@@ -226,7 +218,6 @@ public class ToBuyActivity extends Activity {
                 LinearLayout ll_detail = new LinearLayout(ToBuyActivity.this);
                 ll_detail.setOrientation(LinearLayout.HORIZONTAL);//设置朝向,水平
                 ll_detail.setPadding(5, 5, 5, 5);//四周留白
-                Log.e(TAG, "msg.length: " + msg.length + "   /arg0: " + arg0);
                 for (int i = 0; i < msg.length; i++)//为每一行设置显示的数据
                 {
                     TextView s = new TextView(ToBuyActivity.this);

@@ -25,7 +25,7 @@ public class SelectSeatActivity extends Activity {
     private TextView priceTextview;
     private final static String TAG = SelectSeatActivity.class.getSimpleName();
     private String[] key;
-    private int number;
+    private int number = 0;
     private String totalPrice,fileName,hall,userName,date,time,price;
 
     private List<String> seatList = new ArrayList<>();   //用于存放选中的座位
@@ -49,7 +49,7 @@ public class SelectSeatActivity extends Activity {
         hall = key[1];
         date = key[2];
         time = key[3];
-        price = key[4];
+         price = key[4];
         userName = key[5];
         String Query_seat = LoadUtil.getSoldSeat(fileName,date,hall,time);
 
@@ -103,33 +103,41 @@ public class SelectSeatActivity extends Activity {
 
             @Override
             public void checked(int row, int column) {
+                number = number + 1;
+                setTotalPrice(number);
+                String seat = row + "排" + column + "座";
+                if (!seatList.contains(seat)) {
+                    seatList.add(seat);
+                }
+
                 Log.e(TAG, "checked: " + row + "/" + column );
             }
 
             @Override
             public void unCheck(int row, int column) {
+                number = number - 1;
+                setTotalPrice(number);
+                String seat = row + "排" + column + "座";
+                if (seatList.contains(seat)) {
+                    seatList.remove(seat);
+                }
 
             }
 
             @Override
             public String[] checkedSeatTxt(int row, int column) {
-                String seat = row + "排" + column + "座";
-                Log.e(TAG, "checkedSeatTxt: " + seat);
-                for (String s : seatList) {
-                    Log.e(TAG, "现在买的座位: " + s);
-                }
-                if (!seatList.contains(seat)) {
-                    seatList.add(seat);
-                }
-                number = seatList.size();
-                Log.e(TAG, "购买数量：" + number);
-                totalPrice = Integer.toString(number * Integer.valueOf(price));
-                priceTextview.setText(number * (Integer.valueOf(price)) + "");
+
                 return null;
             }
 
         });
+
         confirmBuy();
+    }
+
+    private void setTotalPrice(int seatNumber){
+        totalPrice = Integer.toString(seatNumber * Integer.valueOf(price));
+        priceTextview.setText(totalPrice);
     }
 
     private void confirmBuy() {

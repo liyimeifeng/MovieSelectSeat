@@ -114,5 +114,9 @@
     <orderEntry type="library" exported="" name="debug-db-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.4.0" level="project" />
+<<<<<<< HEAD
+    <orderEntry type="library" exported="" name="android-android-23" level="project" />
+=======
+>>>>>>> 86b8000e8ecdeef287544759cfb855e433ebbff4
   </component>
 </module>
