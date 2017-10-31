@@ -67,7 +67,6 @@ public class ToQueryActivity extends Activity {
 		if(filmname.equals(""))
 		{
 			Toast.makeText(ToQueryActivity.this, "请输入电影名", Toast.LENGTH_SHORT).show();
-			// DialogUtil.showDialog(this,"用户项必须填写！",false);
 			 return false;
 		}
 		return  true;

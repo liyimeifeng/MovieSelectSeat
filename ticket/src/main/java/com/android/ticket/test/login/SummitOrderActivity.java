@@ -52,17 +52,14 @@ public class SummitOrderActivity extends Activity {
 		totalPrice = key[6];
 		userName = key[7];
 		goSummit();
-		//ButtonClickListener();
 	}
-	public void goSummit() {
+
+	private void goSummit() {
 
 		filenameTextView.setText(fileName);
 		hallTextView.setText(hall);
 		dateTextView.setText(date);
 		timeTextView.setText(time);
-//		seat.substring(0,seat.length()-1);
-//		seat.replace("","aaa");
-//		seat.replace("]","aaa");
 		seatTextView.setText(seat.substring(1,seat.length()-1));  //去掉前后括号
 		totalpriceTextView.setText(totalPrice);
 		usernameTextView.setText(userName);
@@ -72,7 +69,6 @@ public class SummitOrderActivity extends Activity {
 		String soldSeatString = seat.substring(1,seat.length()-1);
 		soldSeatString = soldSeatString.replace("排","-");
 		soldSeatString = soldSeatString.replace("座","");
-//		soldSeatString = soldSeatString.split(",");
 		Log.e(TAG, "goSummit: " + soldSeatString );
 		String[] arr = soldSeatString.split(", ");
 		List<String> list = Arrays.asList(arr);
@@ -91,7 +87,7 @@ public class SummitOrderActivity extends Activity {
 
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				if (hasSoldSeat) {
+				if (hasSoldSeat) {  //数据库已有怎更新，否则就插入
 					Sold sold = LoadUtil.updateSold(fileName,date,hall,time,sb.toString());
 				}else{
 					Sold sold = LoadUtil.insertSold(userName,fileName,hall,date,time,sb.toString());

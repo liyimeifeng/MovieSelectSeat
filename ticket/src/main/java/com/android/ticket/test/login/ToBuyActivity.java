@@ -201,7 +201,7 @@ public class ToBuyActivity extends Activity {
         BaseAdapter ba_detail = new BaseAdapter()//新建适配器
         {
             public int getCount() {
-                Log.e(TAG,"msg: " + Arrays.deepToString(msg) + "   msg[0].length: " + msg[0].length  + " / " + Arrays.toString(msg[0]));
+//                Log.e(TAG,"msg: " + Arrays.deepToString(msg) + "   msg[0].length: " + msg[0].length  + " / " + Arrays.toString(msg[0]));
                 return msg[0].length;//得到列表的长度
             }
 
