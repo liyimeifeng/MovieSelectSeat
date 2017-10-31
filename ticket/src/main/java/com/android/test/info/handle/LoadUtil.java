@@ -47,7 +47,7 @@ public class LoadUtil {
         }
     }
 
-    public static boolean insert(String sql)//插入数据
+    private static boolean insert(String sql)//插入数据
     {
         SQLiteDatabase sld = createOrOpenDatabase();//连接数据库
         try {
@@ -60,7 +60,7 @@ public class LoadUtil {
         }
     }
 
-    public static boolean update(String sql)//更新数据
+    private static boolean update(String sql)//更新数据
     {
         SQLiteDatabase sld = createOrOpenDatabase();//连接数据库
         try {
@@ -74,7 +74,7 @@ public class LoadUtil {
 
     }
 
-    public static boolean delete(String sql)//更新数据
+    private static boolean delete(String sql)//更新数据
     {
         SQLiteDatabase sld = createOrOpenDatabase();//连接数据库
         try {
@@ -86,7 +86,7 @@ public class LoadUtil {
         }
     }
 
-    public static Vector<Vector<String>> query(String sql)//查询
+    private static Vector<Vector<String>> query(String sql)//查询
     {
         Vector<Vector<String>> vector = new Vector<Vector<String>>();//新建存放查询结果的向量
         SQLiteDatabase sld = createOrOpenDatabase();//得到连接数据库的连接
@@ -110,7 +110,7 @@ public class LoadUtil {
         return vector;
     }
 
-    public static Vector<Vector<Float>> query1(String sql)//查询
+    private static Vector<Vector<Float>> query1(String sql)//查询
     {
         Vector<Vector<Float>> vector = new Vector<Vector<Float>>();//新建存放查询结果的向量
         SQLiteDatabase sld = createOrOpenDatabase();//得到连接数据库的连接
@@ -133,7 +133,7 @@ public class LoadUtil {
         return vector;
     }
 
-    public static Vector<Vector<Integer>> query2(String sql)//查询
+    private static Vector<Vector<Integer>> query2(String sql)//查询
     {
         Vector<Vector<Integer>> vector = new Vector<Vector<Integer>>();//新建存放查询结果的向量
         SQLiteDatabase sld = createOrOpenDatabase();//得到连接数据库的连接
@@ -219,7 +219,7 @@ public class LoadUtil {
 
 
     /**
-     * 向数据库中添加已售座位
+     * 向数据库中更新已售座位
      * @param filmname
      * @param date
      * @param hall
@@ -227,10 +227,31 @@ public class LoadUtil {
      * @param seat
      * @return
      */
-    public static Sold addSold(String filmname, String date,String hall,String time ,String seat){
+    public static Sold updateSold(String filmname, String date, String hall, String time , String seat){
         Sold sold = new Sold();
         String sql1 = "update sold set SeatNumber='" + seat+ "' where FilmName='" + filmname + "' and Hall='" + hall+ "' and Date='" + date + "' and Time='" + time + "'" ;
         update(sql1);
+        return sold;
+    }
+
+
+    /**
+     * 插入已售座位
+     * @param username
+     * @param filmname
+     * @param hall
+     * @param date
+     * @param time
+     * @param seatNumber
+     * @return
+     */
+    public static Sold insertSold(String username,String filmname, String hall,String date,  String time , String seatNumber){
+        Sold sold = new Sold();
+        Random r1 = new Random();
+        Random r2 = new Random();
+        int a = r1.nextInt() * r1.nextInt() / 99 + r2.nextInt() / 100000;
+        String sql = "insert into sold values ('" + a + "','"+ username + "','" + filmname + "','" + hall + "','" + date + "','" + time + "','" + seatNumber + "')";
+        insert(sql);
         return sold;
     }
 

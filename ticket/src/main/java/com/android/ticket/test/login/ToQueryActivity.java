@@ -21,10 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ToQueryActivity extends Activity {
-	String visitor = null;//ÉùÃ÷±íÊ¾·ÃÎÊÕß£¬¼´Ê¹ÓÃËÑË÷¹¦ÄÜµÄÓÃ»§ID
+	String visitor = null;//å£°æ˜è¡¨ç¤ºè®¿é—®è€…ï¼Œå³ä½¿ç”¨æœç´¢åŠŸèƒ½çš„ç”¨æˆ·ID
 	Button btnGo1 = null;
 	BaseAdapter ba=null;
-	String[][]msgg=new String[][]{{""}};//ÉùÃ÷ÒıÓÃ
+	String[][]msgg=new String[][]{{""}};//å£°æ˜å¼•ç”¨
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class ToQueryActivity extends Activity {
 		goQuery();
 	}
 	
-	public void goQuery() {//°´µçÓ°Ãû²éÑ¯
+	public void goQuery() {//æŒ‰ç”µå½±åæŸ¥è¯¢
 		setContentView(R.layout.query);
 		btnGo1 = (Button)findViewById(R.id.query1);
         btnGo1.setOnClickListener(new View.OnClickListener() {
@@ -46,17 +46,17 @@ public class ToQueryActivity extends Activity {
 				 Vector<Vector<String>> Query_film;
 				 Query_film = LoadUtil.getfilmname1(filmname);
 				 if(Query_film.size()==0){
-					Toast.makeText(ToQueryActivity.this, "¶Ô²»Æğ£¬Ã»ÓĞÏà¹ØĞÅÏ¢!!!", Toast.LENGTH_SHORT).show();
+					Toast.makeText(ToQueryActivity.this, "å¯¹ä¸èµ·ï¼Œæ²¡æœ‰ç›¸å…³ä¿¡æ¯!!!", Toast.LENGTH_SHORT).show();
 						//etKeyword1.setText("");etKeyword2.setText("");
 					return;
 				}else{
-				 String[][] msgInfo=new String[Query_film.elementAt(0).size()][Query_film.size()];//ĞÂ½¨ºÍ½á¹ûÏòÁ¿¶ÔÓ¦µÄÊı×é
-				 for(int i=0;i<Query_film.size();i++){//forÑ­»·½«½á¹ûÏòÁ¿ÖĞµÄÊı¾İµ¼ÈëÊı×é
+				 String[][] msgInfo=new String[Query_film.elementAt(0).size()][Query_film.size()];//æ–°å»ºå’Œç»“æœå‘é‡å¯¹åº”çš„æ•°ç»„
+				 for(int i=0;i<Query_film.size();i++){//forå¾ªç¯å°†ç»“æœå‘é‡ä¸­çš„æ•°æ®å¯¼å…¥æ•°ç»„
 					for(int j=0;j<Query_film.elementAt(0).size();j++){
 						msgInfo[j][i]=(String)Query_film.get(i).get(j);
 					}
 				}
-				goToListView(msgInfo);//ÇĞ»»µ½²éÑ¯½á¹ûÏÔÊ¾½çÃæListView½çÃæ
+				goToListView(msgInfo);//åˆ‡æ¢åˆ°æŸ¥è¯¢ç»“æœæ˜¾ç¤ºç•Œé¢ListViewç•Œé¢
 			}	
 		}
 	}
@@ -66,8 +66,8 @@ public class ToQueryActivity extends Activity {
 		String filmname = etKeyword1.getText().toString().trim();
 		if(filmname.equals(""))
 		{
-			Toast.makeText(ToQueryActivity.this, "ÇëÊäÈëµçÓ°Ãû", Toast.LENGTH_SHORT).show();
-			// DialogUtil.showDialog(this,"ÓÃ»§Ïî±ØĞëÌîĞ´£¡",false);
+			Toast.makeText(ToQueryActivity.this, "è¯·è¾“å…¥ç”µå½±å", Toast.LENGTH_SHORT).show();
+			// DialogUtil.showDialog(this,"ç”¨æˆ·é¡¹å¿…é¡»å¡«å†™ï¼",false);
 			 return false;
 		}
 		return  true;
@@ -76,36 +76,36 @@ public class ToQueryActivity extends Activity {
 }
 	
 	public void goToListView(String[][]mssg) {
-		msgg=mssg;//¸³ÖµÒıÓÃ¸øÈ«¾ÖÊı×é£¬ÓÃÀ´ÊµÏÖ·µ»Ø°´Å¥¹¦ÄÜ
-        setContentView(R.layout.detail);//ÇĞ»»½çÃæ
-        final String[][]msg=mssg;//ĞÂ½¨Êı×é£¬²¢¸³Öµ
-        ListView lv_detail=(ListView)this.findViewById(R.id.ListView_detail);//ÄÃµ½ListViewµÄÒıÓÃ
-        BaseAdapter ba_detail=new BaseAdapter()//ĞÂ½¨ÊÊÅäÆ÷
+		msgg=mssg;//èµ‹å€¼å¼•ç”¨ç»™å…¨å±€æ•°ç»„ï¼Œç”¨æ¥å®ç°è¿”å›æŒ‰é’®åŠŸèƒ½
+        setContentView(R.layout.detail);//åˆ‡æ¢ç•Œé¢
+        final String[][]msg=mssg;//æ–°å»ºæ•°ç»„ï¼Œå¹¶èµ‹å€¼
+        ListView lv_detail=(ListView)this.findViewById(R.id.ListView_detail);//æ‹¿åˆ°ListViewçš„å¼•ç”¨
+        BaseAdapter ba_detail=new BaseAdapter()//æ–°å»ºé€‚é…å™¨
         {
 			public int getCount() 
 			{
-				return msg[0].length;//µÃµ½ÁĞ±íµÄ³¤¶È
+				return msg[0].length;//å¾—åˆ°åˆ—è¡¨çš„é•¿åº¦
 			}
 			public Object getItem(int arg0){return null;}
 			public long getItemId(int arg0){return 0;}
-			public View getView(int arg0, View arg1, ViewGroup arg2)//ÎªÃ¿Ò»ÏîÌí¼ÓÄÚÈİ
+			public View getView(int arg0, View arg1, ViewGroup arg2)//ä¸ºæ¯ä¸€é¡¹æ·»åŠ å†…å®¹
 			{
 				LinearLayout ll_detail=new LinearLayout(ToQueryActivity.this);
-				ll_detail.setOrientation(LinearLayout.HORIZONTAL);		//ÉèÖÃ³¯Ïò	
-				ll_detail.setPadding(5,5,5,5);//ËÄÖÜÁô°×
-				for(int i=0;i<msg.length;i++)//ÎªÃ¿Ò»ĞĞÉèÖÃÏÔÊ¾µÄÊı¾İ
+				ll_detail.setOrientation(LinearLayout.HORIZONTAL);		//è®¾ç½®æœå‘	
+				ll_detail.setPadding(5,5,5,5);//å››å‘¨ç•™ç™½
+				for(int i=0;i<msg.length;i++)//ä¸ºæ¯ä¸€è¡Œè®¾ç½®æ˜¾ç¤ºçš„æ•°æ®
 				{					    
 					TextView s= new TextView(ToQueryActivity.this);
-					s.setText(msg[i][arg0]);//TextViewÖĞÏÔÊ¾µÄÎÄ×Ö
-					s.setTextSize(11);//×ÖÌå´óĞ¡
-					s.setPadding(1,2,2,1);//ËÄÖÜÁô°×
-					s.setWidth(50);//¿í¶È
+					s.setText(msg[i][arg0]);//TextViewä¸­æ˜¾ç¤ºçš„æ–‡å­—
+					s.setTextSize(11);//å­—ä½“å¤§å°
+					s.setPadding(1,2,2,1);//å››å‘¨ç•™ç™½
+					s.setWidth(50);//å®½åº¦
 				    s.setGravity(Gravity.CENTER);
-				    ll_detail.addView(s);//·ÅÈëLinearLayout
+				    ll_detail.addView(s);//æ”¾å…¥LinearLayout
 				}
-				return ll_detail;//½«´ËLinearLayout·µ»Ø
+				return ll_detail;//å°†æ­¤LinearLayoutè¿”å›
 			}        	
         };    
-        lv_detail.setAdapter(ba_detail);//½«ÊÊÅäÆ÷Ìí¼Ó½øListView
+        lv_detail.setAdapter(ba_detail);//å°†é€‚é…å™¨æ·»åŠ è¿›ListView
 	}
 }

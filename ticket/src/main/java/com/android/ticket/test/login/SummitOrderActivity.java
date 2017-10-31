@@ -7,6 +7,7 @@ import com.android.test.info.handle.LoadUtil;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,19 +19,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SummitOrderActivity extends Activity {
-	private String[] key;
-    TextView usernameTextView = null;
-    TextView filenameTextView = null;
-    TextView dateTextView = null;
-    TextView timeTextView = null;
-    TextView quantityTextView = null;
-    TextView totalpriceTextView = null;
-	TextView hallTextView = null;
-	TextView seatTextView = null;
-	private final static String TAG = SummitOrderActivity.class.getSimpleName();
 
+	private final static String TAG = SummitOrderActivity.class.getSimpleName();
+	private String[] key;
+    TextView usernameTextView = null,filenameTextView = null,dateTextView = null,timeTextView = null,
+			quantityTextView = null,totalpriceTextView = null,hallTextView = null,seatTextView = null;
 	Button btn = null;
 	private String totalPrice,fileName,hall,seat,userName,date,time,price,number;
+	private boolean hasSoldSeat = false;
 
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -64,10 +60,10 @@ public class SummitOrderActivity extends Activity {
 		hallTextView.setText(hall);
 		dateTextView.setText(date);
 		timeTextView.setText(time);
-		seat.substring(0,seat.length()-1);
+//		seat.substring(0,seat.length()-1);
 //		seat.replace("","aaa");
 //		seat.replace("]","aaa");
-		seatTextView.setText(seat.substring(1,seat.length()-1));
+		seatTextView.setText(seat.substring(1,seat.length()-1));  //去掉前后括号
 		totalpriceTextView.setText(totalPrice);
 		usernameTextView.setText(userName);
 		quantityTextView.setText(number);
@@ -84,14 +80,22 @@ public class SummitOrderActivity extends Activity {
 		final StringBuilder sb  = new StringBuilder();
 		sb.append(getSoldSeat());
 		for (String s : list) {
-			sb.append(",{"+ s+"}");
+			if (TextUtils.isEmpty(sb)){
+				sb.append("[{" +s + "}" );
+			}else{
+				sb.append(",{"+ s+"}");
+			}
 		}
 		sb.append("]");
 		Log.e(TAG, "最终: " + sb );
 
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Sold sold = LoadUtil.addSold(fileName,date,hall,time,sb.toString());
+				if (hasSoldSeat) {
+					Sold sold = LoadUtil.updateSold(fileName,date,hall,time,sb.toString());
+				}else{
+					Sold sold = LoadUtil.insertSold(userName,fileName,hall,date,time,sb.toString());
+				}
 			    Purchase film = LoadUtil.addTicket(userName,fileName,number,hall,seat,totalPrice,time);  //分别是用户名、片名、购买数量、影厅、座位、总价、时间
 				if(film!=null)
 				{
@@ -117,9 +121,12 @@ public class SummitOrderActivity extends Activity {
 
 	private String getSoldSeat(){
 		String Query_seat = LoadUtil.getSoldSeat(fileName,date,hall,time);
-
-		String demo = Query_seat.substring(0,Query_seat.length()-1);
-		Log.e(TAG, "Query_seat: " + demo );
-		return demo;
+		if (!TextUtils.isEmpty(Query_seat)){
+			hasSoldSeat = true;
+			String sold = Query_seat.substring(0,Query_seat.length()-1);   //查询已售座位，去掉最后一个大括号
+			Log.e(TAG, "Query_seat: " + sold );
+			return sold;
+		}
+		return "";
 	}
 }
