@@ -99,7 +99,7 @@ public class ToReturnActivity extends Activity {//退票
 						{
 							Toast.makeText(ToReturnActivity.this, "成功退票！", Toast.LENGTH_SHORT).show();
 							Intent it = new Intent();
-							it.setClass(ToReturnActivity.this, MainmenuActivity.class);
+							it.setClass(ToReturnActivity.this, UserMenuActivity.class);
 							it.putExtra("username", msg[1][arg0]);
 							startActivity(it);
 						}

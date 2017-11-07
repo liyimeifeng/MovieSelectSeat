@@ -87,7 +87,7 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:33:17-77
 	android:name
 		ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:33:27-74
-activity#com.android.ticket.test.login.MainmenuActivity
+activity#com.android.ticket.test.login.UserMenuActivity
 ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:36:9-38:48
 	android:label
 		ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:38:13-45
@@ -147,7 +147,7 @@ ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xm
 		ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:65:13-45
 	android:name
 		ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:64:13-52
-activity#com.android.ticket.test.login.MainmenuActivity1
+activity#com.android.ticket.test.login.AdminMenuActivity
 ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:66:9-68:48
 	android:label
 		ADDED from D:\ASProject\movie\MovieSelectSeat\ticket\src\main\AndroidManifest.xml:68:13-45
@@ -184,6 +184,7 @@ MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Admin
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Administrator\.android\build-cache\ee0d90438904d390cd5f48c419ce8fea1aa50be6\output\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Administrator\.android\build-cache\a32cfa48ae50f747556c005e0c5021afd72cf85d\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\f68838e66d553499107152550ed679a89a0252d1\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.33] C:\Users\Administrator\.android\build-cache\bf548a94b6c2cc1df5d96eb141e56fe5daf66e18\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\Administrator\.android\build-cache\317f9996b70a554e9b9730409eebb290a58ee836\output\AndroidManifest.xml:25:5-27:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Administrator\.android\build-cache\4129880f45c7d36ccd4a9fc64c26d74bc1336d76\output\AndroidManifest.xml:23:9-75

@@ -1,6 +1,7 @@
 package com.android.ticket.test.login;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainmenuActivity extends Activity {
+
+import com.android.test.info.DBManager;
+import com.android.test.info.LoginInfo;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class UserMenuActivity extends Activity {
     TextView tv_name = null;
     Button b1 = null;
     Button b2 = null;
@@ -17,13 +25,13 @@ public class MainmenuActivity extends Activity {
     Button b4 = null;
     Button bt_quitapp = null;
     String username = null;
-    private final static String TAG = MainmenuActivity.class.getSimpleName();
+    private final static String TAG = UserMenuActivity.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainmenu);
-        //	Toast.makeText(MainmenuActivity.this, username, Toast.LENGTH_SHORT).show();
+        //	Toast.makeText(UserMenuActivity.this, username, Toast.LENGTH_SHORT).show();
         TextView t1 = (TextView) findViewById(R.id.text1);
         TextView t2 = (TextView) findViewById(R.id.text2);
         b1 = (Button) findViewById(R.id.button1);//购票
@@ -38,6 +46,25 @@ public class MainmenuActivity extends Activity {
         t2.setText("欢迎进入电影订票系统");
         InitMenuEvent();
         QuitApp();
+//        List<LoginInfo> list = DBManager.getInstance(this).queryLoginInfoList();
+        final DBManager dbManager = DBManager.getInstance(this);
+
+
+//        Log.e(TAG, "onCreate: " + list);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 5; i++) {
+                    LoginInfo user = new LoginInfo();
+                    user.setId( i + "");
+                    user.setEmail("1qq");
+                    user.setPwd("qqq");
+                    user.setTel("139");
+                    user.setUser_id(1000);
+                    dbManager.insertLoginInfo(user);
+                }
+            }
+        }).start();
     }
 
     private void InitMenuEvent() {
@@ -45,7 +72,7 @@ public class MainmenuActivity extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent();
                 it.putExtra("username", username);
-                it.setClass(MainmenuActivity.this, ToBuyActivity.class);
+                it.setClass(UserMenuActivity.this, ToBuyActivity.class);
                 startActivity(it);
             }
         });
@@ -55,7 +82,7 @@ public class MainmenuActivity extends Activity {
                 Intent it = new Intent();
                 it.putExtra("username", username);
                 Log.e(TAG, "username: " + username );
-                it.setClass(MainmenuActivity.this, ViewOrederActivity.class);
+                it.setClass(UserMenuActivity.this, ViewOrederActivity.class);
                 startActivity(it);            }
         });
 
@@ -67,7 +94,7 @@ public class MainmenuActivity extends Activity {
 //            public void onClick(View v) {
 //                Intent it = new Intent();
 //                it.putExtra("username", username);
-//                it.setClass(MainmenuActivity.this, ToReturnActivity.class);
+//                it.setClass(UserMenuActivity.this, ToReturnActivity.class);
 //                startActivity(it);            }
 //        });
 
@@ -75,7 +102,7 @@ public class MainmenuActivity extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent();
                 it.putExtra("username", username);
-                it.setClass(MainmenuActivity.this, SelectQueryActivity.class);
+                it.setClass(UserMenuActivity.this, SelectQueryActivity.class);
                 startActivity(it);            }
         });
     }
@@ -85,7 +112,7 @@ public class MainmenuActivity extends Activity {
             bt_quitapp.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent();
-                    intent.setClass(MainmenuActivity.this,LoginActivity.class);
+                    intent.setClass(UserMenuActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }
             });

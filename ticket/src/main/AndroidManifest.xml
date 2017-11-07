@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainmenuActivity"
+            android:name=".UserMenuActivity"
             android:label="@string/app_name" />
         <activity
             android:name=".LoginActivity"
@@ -64,7 +64,7 @@
             android:name=".QuerybyDistrictActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".MainmenuActivity1"
+            android:name=".AdminMenuActivity"
             android:label="@string/app_name" />
         <activity
             android:name=".DetailActivity"

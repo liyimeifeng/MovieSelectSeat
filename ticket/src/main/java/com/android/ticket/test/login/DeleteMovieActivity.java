@@ -150,7 +150,7 @@ public class DeleteMovieActivity extends Activity {
 					Intent it = new Intent();
 					
 					it.putExtra("username", "admin");
-					it.setClass(DeleteMovieActivity.this, MainmenuActivity1.class);
+					it.setClass(DeleteMovieActivity.this, AdminMenuActivity.class);
 					
 					startActivity(it);
 				}
@@ -197,7 +197,7 @@ public class DeleteMovieActivity extends Activity {
 							Intent it = new Intent();
 							
 							it.putExtra("username", "admin");
-							it.setClass(DeleteMovieActivity.this, MainmenuActivity1.class);
+							it.setClass(DeleteMovieActivity.this, AdminMenuActivity.class);
 							
 							startActivity(it);
 						}

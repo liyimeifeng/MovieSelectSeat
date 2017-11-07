@@ -12,7 +12,7 @@ import android.widget.TextView;
 /**
  * 后台管理接口，影片的曾删改查
  */
-public class MainmenuActivity1 extends Activity {
+public class AdminMenuActivity extends Activity {
 	TextView tv_name=null;
 	Button b1=null;
 	Button b2=null;
@@ -44,7 +44,7 @@ public class MainmenuActivity1 extends Activity {
 			private void button1_handle() {
 				Intent it=new Intent();
 				it.putExtra("username", username);
-				it.setClass(MainmenuActivity1.this,DetailActivity.class);
+				it.setClass(AdminMenuActivity.this,DetailActivity.class);
 		    	startActivity(it);
 			}
 		});
@@ -57,7 +57,7 @@ public class MainmenuActivity1 extends Activity {
 			private void button2_handle() {
 				Intent it=new Intent();
 				it.putExtra("username", username);
-				it.setClass(MainmenuActivity1.this,InsertfilmActivity.class);
+				it.setClass(AdminMenuActivity.this,InsertfilmActivity.class);
 		    	startActivity(it);
 			}
 		});
@@ -70,7 +70,7 @@ public class MainmenuActivity1 extends Activity {
 			private void button3_handle() {
 				Intent it=new Intent();
 				it.putExtra("username", username);
-				it.setClass(MainmenuActivity1.this,SelectQueryActivity.class);
+				it.setClass(AdminMenuActivity.this,SelectQueryActivity.class);
 		    	startActivity(it);
 			}
 		});
@@ -83,7 +83,7 @@ public class MainmenuActivity1 extends Activity {
 			private void button4_handle() {
 				Intent it=new Intent();
 				it.putExtra("username", username);
-				it.setClass(MainmenuActivity1.this,DeleteMovieActivity.class);
+				it.setClass(AdminMenuActivity.this,DeleteMovieActivity.class);
 		    	startActivity(it);
 			}
 		});

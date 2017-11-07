@@ -12,28 +12,29 @@ public class LoginInfoHandle implements IDatabaseHandle {
 
     private final static String createStr = "create table loginInfo (user_id int,id varchar(50),pwd varchar(50),tel varchar(11),card varchar(18))";
     private final static String TABLE = "loginInfo";
+    private final static String DB_NAME = "mydb";
     Context mContext;
 
     public LoginInfoHandle(Context context) {
         mContext = context;
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
     }
 
     public void createDatabase() {
         // TODO Auto-generated method stub
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         dbHelper.getReadableDatabase();
     }
 
     public void upgrateDatabase() {
         // TODO Auto-generated method stub
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         dbHelper.getReadableDatabase();
     }
 
     public void insert(Object obj) {
         // TODO Auto-generated method stub
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         ContentValues values = new ContentValues();
         LoginInfo info = (LoginInfo) obj;
         info.setUser_id(getNumber() + 1);
@@ -42,7 +43,7 @@ public class LoginInfoHandle implements IDatabaseHandle {
         values.put("id", info.getId());
         values.put("pwd", info.getPwd());
         values.put("tel", info.gettel());
-        values.put("card", info.getCard());
+        values.put("card", info.getEmail());
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.insert(TABLE, null, values);
@@ -54,7 +55,7 @@ public class LoginInfoHandle implements IDatabaseHandle {
      */
     private int getNumber() {
         // TODO Auto-generated method stub
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         try {
             Cursor cursor = db.query(TABLE, new String[]{"id"}, null, null, null, null, null);
@@ -69,7 +70,7 @@ public class LoginInfoHandle implements IDatabaseHandle {
 
     public void update(Object obj) {
         // TODO Auto-generated method stub
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         //生成ContentValues对象，并设定键值对
         LoginInfo info = (LoginInfo) obj;
@@ -77,14 +78,14 @@ public class LoginInfoHandle implements IDatabaseHandle {
         values.put("id", info.getId());
         values.put("pwd", info.getPwd());
         values.put("tel", info.gettel());
-        values.put("card", info.getCard());
+        values.put("card", info.getEmail());
         db.update(TABLE, values, " user_id=?", new String[]{"" + info.getUser_id()});
     }
 
     public boolean CorrectOfAccountAndPassword(String id, String pwd) {
         // TODO Auto-generated method stub
         boolean ret = false;
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         try {
             Cursor cursor = db.query(TABLE, new String[]{"id", "pwd"}, " id =? and  pwd =? ", new String[]{id, pwd}, null, null, null);
@@ -99,7 +100,7 @@ public class LoginInfoHandle implements IDatabaseHandle {
     public boolean isExist(String id) {
         // TODO Auto-generated method stub
         boolean ret = false;
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext, "mydb", null, 10, createStr);
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         try {
             Cursor cursor = db.query(TABLE, new String[]{"id"}, " id =?", new String[]{id}, null, null, null);

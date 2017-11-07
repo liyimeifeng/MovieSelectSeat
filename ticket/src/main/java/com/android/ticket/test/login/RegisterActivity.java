@@ -74,8 +74,8 @@ public class RegisterActivity extends Activity {
         LoginInfo logininfo = new LoginInfo();
         logininfo.setId(edittext[0].getText().toString());
         logininfo.setPwd(edittext[1].getText().toString());
-        logininfo.settel(edittext[3].getText().toString());
-        logininfo.setCard(edittext[4].getText().toString());
+        logininfo.setTel(edittext[3].getText().toString());
+        logininfo.setEmail(edittext[4].getText().toString());
         LoginInfoHandle handle = new LoginInfoHandle(this);
         handle.createDatabase();
         if (handle.isExist(logininfo.getId())) {

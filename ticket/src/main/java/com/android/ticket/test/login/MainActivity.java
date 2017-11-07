@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 	                        progressBarHorizontal.setProgress(waited); 
 	                    }
 	                }
-	                CreatTable.creattable();
+//	                CreatTable.creattable();
 	            } catch(InterruptedException e) {
 	                // do nothing
 	            } finally {

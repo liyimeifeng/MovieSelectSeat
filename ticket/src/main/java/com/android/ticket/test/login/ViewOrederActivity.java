@@ -30,48 +30,48 @@ public class ViewOrederActivity extends Activity {
 	}
 
 	public void goviewOrder() {
-		ListView lv_detail=(ListView)this.findViewById(R.id.ListView_vieworder);//ÄÃµ½ListViewµÄÒıÓÃ
+		ListView lv_detail=(ListView)this.findViewById(R.id.ListView_vieworder);//æ‹¿åˆ°ListViewçš„å¼•ç”¨
         Vector<Vector<String>> Query_vieworder;
 		Query_vieworder = LoadUtil.viewOrder(username);
 
 		Log.e(TAG, "Query_vieworder: " + Query_vieworder );
 		if (Query_vieworder.size() > 0){
-			String[][] msgInfo=new String[Query_vieworder.elementAt(0).size()][Query_vieworder.size()];//ĞÂ½¨ºÍ½á¹ûÏòÁ¿¶ÔÓ¦µÄÊı×é
+			String[][] msgInfo=new String[Query_vieworder.elementAt(0).size()][Query_vieworder.size()];//æ–°å»ºå’Œç»“æœå‘é‡å¯¹åº”çš„æ•°ç»„
 			for(int i=0;i<Query_vieworder.size();i++)
-			{//forÑ­»·½«½á¹ûÏòÁ¿ÖĞµÄÊı¾İµ¼ÈëÊı×é
+			{//forå¾ªç¯å°†ç»“æœå‘é‡ä¸­çš„æ•°æ®å¯¼å…¥æ•°ç»„
 				for(int j=0;j<Query_vieworder.elementAt(0).size();j++)
 				{
 					msgInfo[j][i]=(String)Query_vieworder.get(i).get(j);
 				}
 			}
-			final String[][]msg=msgInfo;//ĞÂ½¨Êı×é£¬²¢¸³Öµ
-			BaseAdapter ba_detail=new BaseAdapter()//ĞÂ½¨ÊÊÅäÆ÷
+			final String[][]msg=msgInfo;//æ–°å»ºæ•°ç»„ï¼Œå¹¶èµ‹å€¼
+			BaseAdapter ba_detail=new BaseAdapter()//æ–°å»ºé€‚é…å™¨
 			{
 				public int getCount()
 				{
-					return msg[0].length;//µÃµ½ÁĞ±íµÄ³¤¶È
+					return msg[0].length;//å¾—åˆ°åˆ—è¡¨çš„é•¿åº¦
 				}
 				public Object getItem(int arg0){return null;}
 				public long getItemId(int arg0){return 0;}
-				public View getView(int arg0, View arg1, ViewGroup arg2)//ÎªÃ¿Ò»ÏîÌí¼ÓÄÚÈİ
+				public View getView(int arg0, View arg1, ViewGroup arg2)//ä¸ºæ¯ä¸€é¡¹æ·»åŠ å†…å®¹
 				{
 					LinearLayout ll_detail=new LinearLayout(ViewOrederActivity.this);
-					ll_detail.setOrientation(LinearLayout.HORIZONTAL);		//ÉèÖÃ³¯Ïò
-					ll_detail.setPadding(5,5,0,5);//ËÄÖÜÁô°×
-					for(int i=0;i<msg.length;i++)//ÎªÃ¿Ò»ĞĞÉèÖÃÏÔÊ¾µÄÊı¾İ
+					ll_detail.setOrientation(LinearLayout.HORIZONTAL);		//è®¾ç½®æœå‘
+					ll_detail.setPadding(5,5,0,5);//å››å‘¨ç•™ç™½
+					for(int i=0;i<msg.length;i++)//ä¸ºæ¯ä¸€è¡Œè®¾ç½®æ˜¾ç¤ºçš„æ•°æ®
 					{
 						TextView s= new TextView(ViewOrederActivity.this);
-						s.setText(msg[i][arg0]);//TextViewÖĞÏÔÊ¾µÄÎÄ×Ö
-						s.setTextSize(14);//×ÖÌå´óĞ¡
-						s.setPadding(1,2,2,1);//ËÄÖÜÁô°×
-						s.setWidth(150);//¿í¶È
+						s.setText(msg[i][arg0]);//TextViewä¸­æ˜¾ç¤ºçš„æ–‡å­—
+						s.setTextSize(14);//å­—ä½“å¤§å°
+						s.setPadding(1,2,2,1);//å››å‘¨ç•™ç™½
+						s.setWidth(150);//å®½åº¦
 						s.setGravity(Gravity.CENTER);
-						ll_detail.addView(s);//·ÅÈëLinearLayout
+						ll_detail.addView(s);//æ”¾å…¥LinearLayout
 					}
-					return ll_detail;//½«´ËLinearLayout·µ»Ø
+					return ll_detail;//å°†æ­¤LinearLayoutè¿”å›
 				}
 			};
-			lv_detail.setAdapter(ba_detail);//½«ÊÊÅäÆ÷Ìí¼Ó½øListView
+			lv_detail.setAdapter(ba_detail);//å°†é€‚é…å™¨æ·»åŠ è¿›ListView
 		}
 
 	}

@@ -99,7 +99,7 @@ public class SummitOrderActivity extends Activity {
 					Intent it = new Intent();
 					Bundle bundle = new Bundle();
 					bundle.putStringArray("username", new String[]{"1"});
-					it.setClass(SummitOrderActivity.this,MainmenuActivity.class);
+					it.setClass(SummitOrderActivity.this,UserMenuActivity.class);
 					it.putExtra("username", userName);   //这里传参一定要是username
 					startActivity(it);
 				}
@@ -108,7 +108,7 @@ public class SummitOrderActivity extends Activity {
 					Toast.makeText(SummitOrderActivity.this,"失败提交订单", Toast.LENGTH_SHORT).show();
 					Intent it = new Intent();
 					it.putExtra("username", key[6]);
-					it.setClass(SummitOrderActivity.this, MainmenuActivity.class);
+					it.setClass(SummitOrderActivity.this, UserMenuActivity.class);
 					startActivity(it);
 				}
 			}

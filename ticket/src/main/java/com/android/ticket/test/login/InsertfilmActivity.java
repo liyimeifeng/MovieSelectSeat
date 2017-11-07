@@ -48,14 +48,14 @@ public class InsertfilmActivity extends Activity {
                     Intent it = new Intent();
                     Bundle bundle = new Bundle();
                     bundle.putStringArray("username", new String[]{"admin"});
-                    it.setClass(InsertfilmActivity.this, MainmenuActivity1.class);
+                    it.setClass(InsertfilmActivity.this, AdminMenuActivity.class);
                     it.putExtra("username", "admin");
                     startActivity(it);
                 } else {
                     Toast.makeText(InsertfilmActivity.this, "添加失败", Toast.LENGTH_SHORT).show();
                     Intent it = new Intent();
                     it.putExtra("username", new String[]{"admin"});
-                    it.setClass(InsertfilmActivity.this, MainmenuActivity1.class);
+                    it.setClass(InsertfilmActivity.this, AdminMenuActivity.class);
                     startActivity(it);
                 }
             }

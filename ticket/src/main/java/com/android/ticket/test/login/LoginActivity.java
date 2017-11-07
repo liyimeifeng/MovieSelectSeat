@@ -81,7 +81,7 @@ public class LoginActivity extends Activity {
                 String username = ET_username.getText().toString().trim();
                 Intent it = new Intent();
                 it.putExtra("username", username);
-                it.setClass(LoginActivity.this, MainmenuActivity.class);
+                it.setClass(LoginActivity.this, UserMenuActivity.class);
                 startActivity(it);
                 LoginActivity.this.finish();
             }
@@ -93,7 +93,7 @@ public class LoginActivity extends Activity {
                 String username = ET_username.getText().toString().trim();
                 Intent it = new Intent();
                 it.putExtra("username", username);
-                it.setClass(LoginActivity.this, MainmenuActivity1.class);
+                it.setClass(LoginActivity.this, AdminMenuActivity.class);
                 startActivity(it);
                 LoginActivity.this.finish();
             }
