@@ -2,10 +2,12 @@ package com.android.test.info;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,6 +16,7 @@ import java.util.List;
 
 public class DBManager {
 
+    private final static String TAG = DBManager.class.getSimpleName();
     private static DBManager INSTANCE;
     private Context context;
     private final static String DB_NAME = "mydb";
@@ -129,8 +132,44 @@ public class DBManager {
         DaoSession daoSession = daoMaster.newSession();
         LoginInfoDao userDao = daoSession.getLoginInfoDao();
         QueryBuilder<LoginInfo> qb = userDao.queryBuilder();
-        qb.where(LoginInfoDao.Properties.User_id.gt(userName)).orderAsc(LoginInfoDao.Properties.User_id);
+        qb.where(LoginInfoDao.Properties.Id.eq(userName)).orderAsc(LoginInfoDao.Properties.Id);
         List<LoginInfo> list = qb.list();
         return list;
+    }
+
+    /**
+     * 根据输入的账号、密码判断是否存在该用户并且密码是否正确
+     * @param id
+     * @param pwd
+     * @return
+     */
+    public boolean isPass(String id, String pwd){
+        DaoMaster daoMaster  = new DaoMaster(getReadableDatabase());
+        DaoSession daoSession = daoMaster.newSession();
+        LoginInfoDao loginInfoDao = daoSession.getLoginInfoDao();
+        QueryBuilder<LoginInfo> qb  =loginInfoDao.queryBuilder();
+        qb.where(LoginInfoDao.Properties.Id.eq(id),LoginInfoDao.Properties.Pwd.eq(pwd)).orderAsc(LoginInfoDao.Properties.Id);
+        List<LoginInfo> list = qb.list();
+        Log.e(TAG, "isPass: " + list.toArray().length);
+        if (list.size() >= 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean isAccountExist(String account){
+        DaoMaster daoMaster  = new DaoMaster(getReadableDatabase());
+        DaoSession daoSession = daoMaster.newSession();
+        LoginInfoDao loginInfoDao = daoSession.getLoginInfoDao();
+        QueryBuilder<LoginInfo> qb  =loginInfoDao.queryBuilder();
+        qb.where(LoginInfoDao.Properties.Id.eq(account)).orderAsc(LoginInfoDao.Properties.Id);
+        List<LoginInfo> list = qb.list();
+        Log.e(TAG, "isPass: " + list.toArray().length);
+        if (list.size() >= 1){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

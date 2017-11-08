@@ -1,6 +1,6 @@
 package com.android.ticket.test.login;
 
-import com.android.test.info.handle.LoginInfoHandle;
+import com.android.test.info.DBManager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -43,15 +43,15 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 String username = ET_username.getText().toString().trim();
                 String pwd = ET_password.getText().toString().trim();
-                LoginInfoHandle handle = new LoginInfoHandle(LoginActivity.this);
-                handle.createDatabase();    //创建数据库
+
+                DBManager dbManager = DBManager.getInstance(LoginActivity.this);
                 if (validate()) {
                     if (cb.isChecked()) {
                         rememberMe(username, pwd);
                     }
                     if (ET_username.getText().toString().equals("admin") && ET_password.getText().toString().equals("admin")) {
                         Gotomainmenu1();
-                    } else if (handle.CorrectOfAccountAndPassword(ET_username.getText().toString(), ET_password.getText().toString())) {
+                    } else if (dbManager.isPass(username,pwd)) {
                         Gotomainmenu();
                     } else {
                         Toast.makeText(LoginActivity.this, getString(R.string.user_or_pwd_err), Toast.LENGTH_SHORT).show();

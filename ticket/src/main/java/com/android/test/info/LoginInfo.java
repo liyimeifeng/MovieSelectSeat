@@ -8,14 +8,14 @@ import org.greenrobot.greendao.annotation.Id;
 public class LoginInfo {
 
 	@Id(autoincrement = true)
-	private long user_id;
+	private Long user_id;
 	private String id;
 	private String pwd;
 	private String tel;
 	private String email;
 
-	@Generated(hash = 9641946)
-	public LoginInfo(long user_id, String id, String pwd, String tel, String email) {
+	@Generated(hash = 1572617203)
+	public LoginInfo(Long user_id, String id, String pwd, String tel, String email) {
 		this.user_id = user_id;
 		this.id = id;
 		this.pwd = pwd;
@@ -23,19 +23,20 @@ public class LoginInfo {
 		this.email = email;
 	}
 
+	@Generated(hash = 1911824992)
 	public LoginInfo() {
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public long getUser_id() {
+	public Long getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(long user_id) {
+	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
 

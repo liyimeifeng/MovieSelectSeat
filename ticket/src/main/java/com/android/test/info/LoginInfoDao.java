@@ -22,7 +22,7 @@ public class LoginInfoDao extends AbstractDao<LoginInfo, Long> {
      * Can be used for QueryBuilder and for referencing column names.
     */
     public static class Properties {
-        public final static Property User_id = new Property(0, long.class, "user_id", true, "_id");
+        public final static Property User_id = new Property(0, Long.class, "user_id", true, "_id");
         public final static Property Id = new Property(1, String.class, "id", false, "ID");
         public final static Property Pwd = new Property(2, String.class, "pwd", false, "PWD");
         public final static Property Tel = new Property(3, String.class, "tel", false, "TEL");
@@ -42,7 +42,7 @@ public class LoginInfoDao extends AbstractDao<LoginInfo, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"LOGIN_INFO\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: user_id
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: user_id
                 "\"ID\" TEXT," + // 1: id
                 "\"PWD\" TEXT," + // 2: pwd
                 "\"TEL\" TEXT," + // 3: tel
@@ -58,7 +58,11 @@ public class LoginInfoDao extends AbstractDao<LoginInfo, Long> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, LoginInfo entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getUser_id());
+ 
+        Long user_id = entity.getUser_id();
+        if (user_id != null) {
+            stmt.bindLong(1, user_id);
+        }
  
         String id = entity.getId();
         if (id != null) {
@@ -84,7 +88,11 @@ public class LoginInfoDao extends AbstractDao<LoginInfo, Long> {
     @Override
     protected final void bindValues(SQLiteStatement stmt, LoginInfo entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getUser_id());
+ 
+        Long user_id = entity.getUser_id();
+        if (user_id != null) {
+            stmt.bindLong(1, user_id);
+        }
  
         String id = entity.getId();
         if (id != null) {
@@ -109,13 +117,13 @@ public class LoginInfoDao extends AbstractDao<LoginInfo, Long> {
 
     @Override
     public Long readKey(Cursor cursor, int offset) {
-        return cursor.getLong(offset + 0);
+        return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
     }    
 
     @Override
     public LoginInfo readEntity(Cursor cursor, int offset) {
         LoginInfo entity = new LoginInfo( //
-            cursor.getLong(offset + 0), // user_id
+            cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // user_id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // id
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // pwd
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // tel
@@ -126,7 +134,7 @@ public class LoginInfoDao extends AbstractDao<LoginInfo, Long> {
      
     @Override
     public void readEntity(Cursor cursor, LoginInfo entity, int offset) {
-        entity.setUser_id(cursor.getLong(offset + 0));
+        entity.setUser_id(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setId(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setPwd(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setTel(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));

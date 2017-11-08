@@ -48,23 +48,9 @@ public class UserMenuActivity extends Activity {
         QuitApp();
 //        List<LoginInfo> list = DBManager.getInstance(this).queryLoginInfoList();
         final DBManager dbManager = DBManager.getInstance(this);
+        dbManager.queryLoginInfoList();
 
 
-//        Log.e(TAG, "onCreate: " + list);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 5; i++) {
-                    LoginInfo user = new LoginInfo();
-                    user.setId( i + "");
-                    user.setEmail("1qq");
-                    user.setPwd("qqq");
-                    user.setTel("139");
-                    user.setUser_id(1000);
-                    dbManager.insertLoginInfo(user);
-                }
-            }
-        }).start();
     }
 
     private void InitMenuEvent() {

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
+import org.greenrobot.greendao.query.QueryBuilder;
+
 public class MainActivity extends Activity {
 	protected boolean _active = true;
 	protected int _splashTime = 2000;
@@ -14,6 +16,8 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.the_first);
+		QueryBuilder.LOG_SQL = true;
+		QueryBuilder.LOG_VALUES = true;
 		progressBarHorizontal = (ProgressBar) this.findViewById(R.id.progressBarHorizontal);
 		progressBarHorizontal.setMax(_splashTime);
 		final Thread splashThread = new Thread() {

@@ -37,7 +37,7 @@ public class LoginInfoHandle implements IDatabaseHandle {
         DatabaseHelper dbHelper = new DatabaseHelper(mContext, DB_NAME, null, 1, createStr);
         ContentValues values = new ContentValues();
         LoginInfo info = (LoginInfo) obj;
-        info.setUser_id(getNumber() + 1);
+        info.setUser_id(getNumber() + 1L);
         //插入键值对，注意值的类型必须和数据库表中字段的类型一致
         values.put("user_id", info.getUser_id());
         values.put("id", info.getId());
