@@ -1,9 +1,12 @@
 package com.android.ticket.test.login;
 
+import android.animation.Animator;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+
+import com.airbnb.lottie.LottieAnimationView;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
@@ -19,6 +22,32 @@ public class MainActivity extends Activity {
 		QueryBuilder.LOG_SQL = true;
 		QueryBuilder.LOG_VALUES = true;
 		progressBarHorizontal = (ProgressBar) this.findViewById(R.id.progressBarHorizontal);
+		LottieAnimationView lottieAnimationView = (LottieAnimationView)findViewById(R.id.animation_view);
+
+		lottieAnimationView.addAnimatorListener(new Animator.AnimatorListener() {
+			@Override
+			public void onAnimationStart(Animator animation) {
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animator animation) {
+				finish();
+				Intent i = new Intent(MainActivity.this,
+						LoginActivity.class);
+				startActivity(i);
+			}
+
+			@Override
+			public void onAnimationCancel(Animator animation) {
+
+			}
+
+			@Override
+			public void onAnimationRepeat(Animator animation) {
+
+			}
+		});
 		progressBarHorizontal.setMax(_splashTime);
 		final Thread splashThread = new Thread() {
 			@Override
@@ -43,6 +72,6 @@ public class MainActivity extends Activity {
 	            }
 			}
 		};
-		splashThread.start();
+//		splashThread.start();
 	}
 }
