@@ -190,7 +190,7 @@ public class LoadUtil {
     }
 
     public static String getSoldSeat(String filmname, String date,String hall,String time){
-        String sql = "select SeatNumber from sold where FilmName='" + filmname + "'and Hall='" + hall + "'and Date='" + date + "'and Time='" + time + "'";
+        String sql = "select SEAT from sold where FILM_NAME='" + filmname + "'and HALL='" + hall + "'and DATE='" + date + "'and TIME='" + time + "'";
         String temp = querySeat(sql);
         return temp;
     }
@@ -229,7 +229,7 @@ public class LoadUtil {
      */
     public static Sold updateSold(String filmname, String date, String hall, String time , String seat){
         Sold sold = new Sold();
-        String sql1 = "update sold set SeatNumber='" + seat+ "' where FilmName='" + filmname + "' and Hall='" + hall+ "' and Date='" + date + "' and Time='" + time + "'" ;
+        String sql1 = "update sold set SEAT='" + seat+ "' where FILM_NAME='" + filmname + "' and HALL='" + hall+ "' and DATE='" + date + "' and TIME='" + time + "'" ;
         update(sql1);
         return sold;
     }

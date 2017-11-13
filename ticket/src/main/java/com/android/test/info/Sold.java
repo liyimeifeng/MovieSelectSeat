@@ -1,21 +1,44 @@
 package com.android.test.info;
 
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Id;
+
 /**
  * Created by Lee on 2017/10/27 0027.
+ * 已售座位信息表
  */
 
+
+@Entity
 public class Sold {
-    private String soldId;
+    @Id(autoincrement =true)
+    private Long id;
     private String filmName;
     private String hall;
-    private String data;
+    private String date;
 
-    public String getSoldId() {
-        return soldId;
+    @Generated(hash = 1507864730)
+    public Sold(Long id, String filmName, String hall, String date, String time,
+            String seat) {
+        this.id = id;
+        this.filmName = filmName;
+        this.hall = hall;
+        this.date = date;
+        this.time = time;
+        this.seat = seat;
     }
 
-    public void setSoldId(String soldId) {
-        this.soldId = soldId;
+    @Generated(hash = 326176276)
+    public Sold() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFilmName() {
@@ -34,12 +57,12 @@ public class Sold {
         this.hall = hall;
     }
 
-    public String getData() {
-        return data;
+    public String getDate() {
+        return date;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTime() {

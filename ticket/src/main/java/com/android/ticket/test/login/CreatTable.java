@@ -16,7 +16,7 @@ public class CreatTable {
 				"create table if not exists purchase " +//建立购买表
 				"(Purchaseid int primary key,Userid char(20),FilmName char(20),Number char(20),Hall char(20), SeatNumber char(20),Price char(20),Time char(20))",
 				"create table if not exists sold " + //建立已售表
-				"(SoldId int primary key,Userid char(20),FilmName char(20),Hall char(20), Date char(20),Time char(20),SeatNumber char(200))",
+				"(SoldId int primary key,FILM_NAME char(20),HALL char(20), DATE char(20),TIME char(20),SEAT char(200))",
 
 				//插入初始化数据
 				"insert into movieinfo values('10001','雷神','科幻','美国','塔伊加·维迪提','120','该片讲述在《复仇者联盟2：奥创纪元》结尾飞走之后，雷神托尔终于听到了来自阿斯加德的麻烦：洛基一直假扮着他们失踪的父亲奥丁，但洛基治国相当懈怠，导致本被关押的海拉再度现身..')",
@@ -36,11 +36,11 @@ public class CreatTable {
 					"insert into release values('1004','10004','测试用','0','1月2日','00:00','0','0')",
 
 				"insert into purchase values(1,1,'测试用','2','8','5排5座','66','20:00')",
-				"insert into sold values(1,'qqq','雷神','1','10月27日','14:00','[{9-4},{9-3},{9-4},{9-5},{9-6}]')",
-					"insert into sold values(2,'qqq','雷神','2','10月27日','20:00','[{7-4},{7-3},{7-3},{7-5},{7-6},{7-7}]')",
-					"insert into sold values(3,'qqq','银翼杀手','3','10月27日','15:00','[{8-4},{8-3},{8-5},{7-3},{7-4},{7-5}]')",
-					"insert into sold values(4,'qqq','银翼杀手','4','10月27日','12:00','[{5-4},{5-3}]')",
-					"insert into sold values(5,'qqq','正义联盟','6','10月27日','20:00','[{9-4},{9-3}]')"
+				"insert into sold values(1,'雷神','1','10月27日','14:00','[{9-4},{9-3},{9-4},{9-5},{9-6}]')",
+					"insert into sold values(2,'雷神','2','10月27日','20:00','[{7-4},{7-3},{7-3},{7-5},{7-6},{7-7}]')",
+					"insert into sold values(3,'银翼杀手','3','10月27日','15:00','[{8-4},{8-3},{8-5},{7-3},{7-4},{7-5}]')",
+					"insert into sold values(4,'银翼杀手','4','10月27日','12:00','[{5-4},{5-3}]')",
+					"insert into sold values(5,'正义联盟','6','10月27日','20:00','[{9-4},{9-3}]')"
 
 			};			
 			for(String o:sqll){//循环所有SQL语句，进行建表和初始化一些数据操作
